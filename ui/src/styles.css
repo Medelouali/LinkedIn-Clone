@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+/*
+Hex: #1666C5
+RGB: rgb(22 102 197)*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    /*background-color: #f3f2f1;*/
+}

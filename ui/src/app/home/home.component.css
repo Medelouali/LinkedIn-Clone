@@ -1,0 +1,13 @@
+.core__section{
+    position: relative;
+    background-color: #f3f2f1;
+}
+
+.core__header{
+    background-color: white;
+    position: sticky;
+}
+
+.core__content{
+    min-height: 200vh;
+}
