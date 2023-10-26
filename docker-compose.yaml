@@ -1,0 +1,18 @@
+version: '3'  # Specify the Docker Compose file version
+
+services:    # Define the services (containers)
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=notifications,activities,volunteers,companies
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=test
