@@ -6,8 +6,130 @@
 .core__header{
     background-color: white;
     position: sticky;
+    top: 0;
+    padding: 0.3rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
 }
 
 .core__content{
     min-height: 200vh;
+}
+
+.icon svg{
+    color: #0A66C2;
+    width: 2.2rem;
+    height: auto;
+}
+
+.search__bar{
+    height: 2.0rem;
+    width: 18rem;
+}
+
+.icon__search{
+    display: grid;
+    grid-template-columns: auto auto;
+    place-items: center;
+    width: max-content;
+    gap: 0.5rem;
+}
+
+.search__bar > input{
+    height: 100%;
+    width: 100%;
+    padding: 0rem 1rem;
+    background-color: #EDF3F8;
+    border-radius: 0.3rem;
+    outline: none;
+    border: none;
+    font-size: medium;
+}
+
+.links{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: max-content;
+}
+
+.links a{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    place-items: center;
+    text-decoration: none;
+}
+
+a span{
+    font-size: small;
+    color: #00000099;
+}
+
+.links  svg{
+    width: 1.5rem;
+    height: auto;
+    color: #00000099;
+}
+
+.links .me__and__more{
+    display: grid;
+    grid-template-columns: auto auto;
+    place-items: center;
+    color:  #00000099;
+}
+
+.me__and__more svg{
+    margin: auto;
+}
+
+
+
+.profile{
+    display: grid;
+    place-content: center;
+    font-size: small;
+    border-right: 1px solid #f3f2f1;
+    padding-right: 0.5rem;
+}
+
+.profile .image__wrapper{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile svg{
+    width: 1rem;
+    height: auto;
+}
+
+.image__wrapper img{
+    width: 100%;
+    height: auto;
+}
+
+.commercial {
+    width: max-content;
+    gap: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.commercial a{
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+}
+
+.commercial svg{
+    color: #00000099;
+}
+
+
+.active__link{
+    border-bottom: 2px solid #24232399;
 }
