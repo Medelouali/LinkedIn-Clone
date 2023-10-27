@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  isProfileOpen = false;
+  isBesinessOpen= false;
 
+  toggleProfile() {
+    if(this.isBesinessOpen)this.toggleBesiness();
+    this.isProfileOpen =!this.isProfileOpen;
+  }
+
+  toggleBesiness(){
+    if(this.isProfileOpen)this.toggleProfile();
+    this.isBesinessOpen=!this.isBesinessOpen;
+  }
 }

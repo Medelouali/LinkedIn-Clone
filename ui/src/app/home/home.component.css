@@ -7,7 +7,7 @@
     background-color: white;
     position: sticky;
     top: 0;
-    padding: 0.3rem 6rem;
+    padding: 0.4rem 6rem 0 6rem;
     display: flex;
     justify-content: space-between;
     margin: auto;
@@ -23,28 +23,43 @@
     height: auto;
 }
 
-.search__bar{
-    height: 2.0rem;
-    width: 18rem;
-}
-
 .icon__search{
     display: grid;
     grid-template-columns: auto auto;
     place-items: center;
     width: max-content;
     gap: 0.5rem;
+    
 }
 
-.search__bar > input{
+.search__bar{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: 2.0rem;
+    width: 18rem;
+    background-color: #EDF3F8;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.search__bar input{
     height: 100%;
     width: 100%;
     padding: 0rem 1rem;
-    background-color: #EDF3F8;
     border-radius: 0.3rem;
     outline: none;
     border: none;
     font-size: medium;
+    background-color: #EDF3F8;
+}
+
+.search__bar svg{
+    color: #00000099;
+    font-size: small;
+    font-weight: bold;
+    width: 1.2rem;
+    height: auto;
+    margin: auto;
 }
 
 .links{
@@ -60,11 +75,26 @@
     grid-template-rows: auto 1fr;
     place-items: center;
     text-decoration: none;
+    position: relative;
+
+}
+
+.links a .notifications__number{
+    content: attr(counter);
+    background-color: #CB112D;
+    border-radius: 2rem;
+    color: white;
+    padding: 0.1rem 0.4rem;
+    position: absolute;
+    inset: -0.2rem auto auto 50%;
+    font-size: smaller;
+    font-weight: 400;
 }
 
 a span{
     font-size: small;
     color: #00000099;
+    margin-bottom: 0.4rem;
 }
 
 .links  svg{
@@ -92,6 +122,8 @@ a span{
     font-size: small;
     border-right: 1px solid #f3f2f1;
     padding-right: 0.5rem;
+    position: relative;
+    cursor: pointer;
 }
 
 .profile .image__wrapper{
@@ -117,6 +149,7 @@ a span{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    /* position: relative; */
 }
 
 .commercial a{
@@ -132,4 +165,151 @@ a span{
 
 .active__link{
     border-bottom: 2px solid #24232399;
+}
+
+.profile__links{
+    position: absolute;
+    z-index: 10;
+    inset: 110% 0 auto auto;
+    min-width: 20rem;
+    background-color: white;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    transition: box-shadow 83ms;
+    border-radius: 0.4rem 0 0.4rem 0.4rem;
+    padding: 0.5rem;
+}
+
+.avatar__name__intro{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0.2rem 1rem;
+}
+
+.avatar__name__intro .image__wrapper{
+    width: 4rem ;
+    height: 4rem;
+    grid-area: 1/1/3/2;
+    place-items: center;
+}
+
+.avatar__name__intro .image__wrapper img{
+    height: 100%;
+    width: auto;
+}
+
+.avatar__name{
+    font-weight: bold;
+    font-size: medium;
+    grid-area: 1/2/2/3;
+}
+
+.avatar__intro{
+    font-weight: 200;
+    grid-area: 2/2/3/3;
+    font-size: 0.9rem;
+    /* color: #00000099; */
+}
+
+.profile__links > a{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 1rem;
+    border: 0.1rem solid #0A66C2;
+    color: #0A66C2;
+    padding: 2rem auto;
+    margin: 1rem auto;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: small;
+    height: 1.5rem;
+}
+
+.profile__links > .account{
+    border-top: 1px solid #EDF3F8;
+    display: grid;
+    gap: 0.2rem;
+    padding: 1rem 0;
+}
+
+.profile__links > .account a{
+    text-decoration: none;
+    color: #00000099;
+    font-size: medium;
+}
+
+.besiness{
+    position: absolute;
+    inset: 100% 0 0 auto;
+    background-color: white;
+    height: calc(100vh - 100%);
+    width: 30vw;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    padding: 1rem;
+    animation: slide__to__left__animation 500ms ease-out forwards;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.prods{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0.5rem auto;
+}
+
+.prods .prod{
+    width: min-content;
+    place-items: center;
+    cursor: pointer;
+}
+
+.prod span{
+    text-align: center;
+}
+
+.prod > svg{
+    width: 3rem;
+    height: auto;
+    border: 1px solid #EDF3F8;
+}
+
+.content{
+    display: block;
+}
+
+.linked__products{
+    display: grid;
+    margin: 0.5rem auto;
+}
+
+.close__up{
+    cursor: pointer;
+}
+
+@keyframes slide__to__left__animation {
+    0%{
+        position: absolute;
+        inset: 100% -100vw 0 auto;
+        background-color: white;
+        height: calc(100vh - 100%);
+        width: 30vw;
+        box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+        padding: 1rem;
+    }
+    100%{
+        position: absolute;
+        inset: 100% 0 0 auto;
+        background-color: white;
+        height: calc(100vh - 100%);
+        width: 30vw;
+        box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+        padding: 1rem;
+    }
 }
