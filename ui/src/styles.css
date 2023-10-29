@@ -9,3 +9,15 @@ RGB: rgb(22 102 197)*/
     font-family: Helvetica, Arial, sans-serif;
     /*background-color: #f3f2f1;*/
 }
+
+.image__wrapper{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image__wrapper img{
+    width: 100%;
+    height: auto;
+}

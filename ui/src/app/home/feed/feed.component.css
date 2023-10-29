@@ -1,3 +1,38 @@
+
+
 .feed{
-    background-color: #f3f2f1;
+    display: grid;
+    grid-template-columns: 20% 1fr 30%;
+    /* gap: 0.5rem; */
+    padding: 1rem 4vw;
+}
+
+.feed__wrapper{
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    padding: 0.9rem;
+    background-color: white;
+    margin: 0.6rem;
+}
+
+.sort__by{
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr auto auto auto;
+    font-size: small;
+    gap: 0.7rem;
+    width: 97%;
+    margin: auto;
+}
+
+.sort__by .line{
+    width: 100%;
+    height: 1px;
+    background-color: #afabb499;
+}
+
+.sort__by svg{
+    width: 1rem;
+    height: auto;
+    cursor: pointer;
 }

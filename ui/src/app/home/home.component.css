@@ -11,10 +11,12 @@
     display: flex;
     justify-content: space-between;
     margin: auto;
+
 }
 
 .core__content{
     min-height: 200vh;
+
 }
 
 .icon svg{

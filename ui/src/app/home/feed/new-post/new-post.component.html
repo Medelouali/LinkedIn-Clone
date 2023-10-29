@@ -1,0 +1,88 @@
+<div class="new__post">
+    <div class="header">
+        <div class="image__wrapper">
+            <img width="24" src="https://media.licdn.com/dms/image/D4E03AQE3d2b7tCzG2g/profile-displayphoto-shrink_100_100/0/1676728695506?e=1703721600&amp;v=beta&amp;t=8xYHRzce7eQXHyPO3kYNltzxzuhF0rrc-wm02lrxQGE" height="24" alt="El Ouali Mohammed" id="ember16" class="global-nav__me-photo evi-image ember-view">
+        </div>
+        <button (click)="newPost()">
+            Start a post
+        </button>
+    </div>
+    <div class="media__types">
+        <div class="media">
+            <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="image-medium" type="image">
+                <!---->    
+                
+                    <use href="#image-medium" width="24" height="24"></use>
+                </svg>
+            <span>Media</span>
+        </div>
+        <div class="media">
+            <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="calendar-medium" type="calendar">
+                <use href="#calendar-medium" width="24" height="24"></use>
+            </svg>
+            <span>Event</span>
+        </div>
+        <div class="media">
+            <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="calendar-medium" type="calendar">
+                <use href="#calendar-medium" width="24" height="24"></use>
+            </svg>
+            <span>Write article</span>
+        </div>
+    </div>
+    <section *ngIf="isNewPostOn" class="pop__up__wrapper">
+        <div class="top" (click)="toggleIsNewPostOn()"></div>
+        <div class="bottom" (click)="toggleIsNewPostOn()"></div>
+        <div class="left" (click)="toggleIsNewPostOn()"></div>
+        <div class="right" (click)="toggleIsNewPostOn()"></div>
+        <div class="pop__up">
+            <div class="pop__header">
+                <div class="image__wrapper">
+                    <img width="24" src="https://media.licdn.com/dms/image/D4E03AQE3d2b7tCzG2g/profile-displayphoto-shrink_100_100/0/1676728695506?e=1703721600&amp;v=beta&amp;t=8xYHRzce7eQXHyPO3kYNltzxzuhF0rrc-wm02lrxQGE" height="24" alt="El Ouali Mohammed" id="ember16" class="global-nav__me-photo evi-image ember-view">
+                </div>
+                <div class="pop__name">
+                    <div class="name__chevron">
+                        <h3>El Ouali Mohammed</h3>
+                        <div class="chev">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32" id="triangle-down" viewBox="0 0 32 32" width="32"><path d="M4 8 H28 L16 26 z"/></svg>
+                        </div>
+                    </div>
+                    <div class="visibility">
+                        Post to Anyone
+                    </div>
+                </div>
+                <svg (click)="toggleIsNewPostOn()" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                    <path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"></path>
+                </svg>
+            </div>
+
+            <textarea name="" id="" cols="30" rows="10" placeholder="What do you want to talk about?"></textarea>
+            <div class="emojis">
+                <div class="more__emojis"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M620-520q25 0 42.5-17.5T680-580q0-25-17.5-42.5T620-640q-25 0-42.5 17.5T560-580q0 25 17.5 42.5T620-520Zm-280 0q25 0 42.5-17.5T400-580q0-25-17.5-42.5T340-640q-25 0-42.5 17.5T280-580q0 25 17.5 42.5T340-520Zm140 260q68 0 123.5-38.5T684-400h-66q-22 37-58.5 58.5T480-320q-43 0-79.5-21.5T342-400h-66q25 63 80.5 101.5T480-260Zm0 180q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Z"/></svg></div>
+                <div class="emojis_">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Zm140-360q25 0 42.5-17.5T400-620q0-25-17.5-42.5T340-680q-25 0-42.5 17.5T280-620q0 25 17.5 42.5T340-560Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m363-310 117-71 117 71-31-133 104-90-137-11-53-126-53 126-137 11 104 90-31 133ZM480-28 346-160H160v-186L28-480l132-134v-186h186l134-132 134 132h186v186l132 134-132 134v186H614L480-28Zm0-112 100-100h140v-140l100-100-100-100v-140H580L480-820 380-720H240v140L140-480l100 100v140h140l100 100Zm0-340Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></svg>
+                </div>
+            </div>
+            <div class="post__schedule">
+                <div class=""></div>
+                <div class="post__sch">
+                    <button class="schedule">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                            <g>
+                              <path d="M2 12A10 10 0 1012 2 10 10 0 002 12zm2 0a8 8 0 118 8 8 8 0 01-8-8z"></path>
+                              <path d="M15.1 12.63L13 11.42V7a1 1 0 00-2 0v5a1 1 0 00.51.85l2.59 1.52a1 1 0 101-1.74z"></path>
+                            </g>
+                        </svg>
+                    </button>
+                    <button class="post">
+                        Post
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+

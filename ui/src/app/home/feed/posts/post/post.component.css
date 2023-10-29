@@ -1,0 +1,94 @@
+.post__header{
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-rows: 30% 30% 30%;
+    gap: 0 0.6rem;
+    font-size: medium;
+}
+
+.post__header > .image__wrapper{
+    grid-area: 1/1/4/2;
+    width: 3rem;
+    height: 3rem;
+}
+
+.post__header > .name{
+    grid-area: 1/2/2/3;
+    font-weight: bold;
+}
+
+.post__header > .job{
+    grid-area: 2/2/3/3;
+    color: #00000099;
+    font-size: small;
+}
+
+.post__header > .timing{
+    grid-area: 3/2/4/3;
+    display: flex;
+    justify-items: center;
+    color: #00000099;
+    gap: 0.2rem;
+    font-size: small;
+}
+
+.dot{
+    font-size: larger;
+    font-weight: bolder;
+    width: 0.2rem;
+    height: 0.2rem;
+    border-radius: 50%;
+    background-color: #00000099;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.post__header > .dots{
+    grid-area: 1/3/2/4;
+    margin: auto;
+}
+
+.post__header > .close{
+    grid-area: 1/4/2/5;
+}
+
+.close svg , .dots svg{
+    fill: #00000099;
+}
+
+.post > img{
+    width: 100%;
+    height: auto;
+}
+
+.reactions__stats{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #f3f2f1;
+    padding-bottom: 0.5rem;
+}
+
+.reactions__stats .icons{
+    position: relative;
+}
+
+.reactions__stats .stats__nums{
+    display: flex;
+    width: max-content;
+    gap: 0.3rem;
+    color: #00000099;
+    font-size: small;
+}
+
+.icons{
+    display: flex;
+    width: max-content;
+    gap: 0rem;
+}
+
+.icons > p{
+    color: #00000099;
+    font-size: small;
+}
