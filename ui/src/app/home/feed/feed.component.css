@@ -15,6 +15,11 @@
     margin: 0.6rem;
 }
 
+.posts__wrapper{
+    box-shadow: none; 
+    margin: 0.6rem;
+}
+
 .sort__by{
     display: grid;
     place-items: center;

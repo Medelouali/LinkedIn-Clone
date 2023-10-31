@@ -1,0 +1,56 @@
+.suggestion__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.suggestion{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+    margin-bottom: 0.7rem;
+}
+
+.suggestion .image__wrapper{
+    width: 3rem;
+    height: 3rem;
+}
+
+.suggestion .side{
+    display: grid;
+    gap: 0.3rem;
+}
+
+.suggestion p{
+    color: #00000099;
+    font-size: small;
+}
+
+.side button{
+    width: max-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1.5rem;
+    border: 1px solid #000000E6;
+    color: #00000099;
+    font-weight: 800;
+    font-size: medium;
+    gap: 0.4rem;
+    margin-top: 0.3rem;
+    cursor: pointer;
+}
+
+button .plus{
+    font-size: large;
+    font-weight: bold;
+}
+
+.suggestions a{
+    text-decoration: none;
+    color: #00000099;
+    font-weight: bold;
+    font-size: medium;
+}

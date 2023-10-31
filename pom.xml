@@ -23,6 +23,8 @@
   <modules>
     <module>notifications</module>
     <module>messages</module>
+    <module>linkediners</module>
+    <module>search</module>
   </modules>
 
   <dependencyManagement>

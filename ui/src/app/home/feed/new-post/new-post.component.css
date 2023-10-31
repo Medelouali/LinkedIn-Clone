@@ -22,6 +22,10 @@ button{
     padding-left: 1rem;
 }
 
+.header > button{
+    font-size: medium;
+}
+
 button:hover{
     background-color: #EFEFEF;
 }
@@ -206,6 +210,29 @@ button:hover{
     cursor: pointer;
 }
 
+.media{
+    display: flex;
+    width: max-content;
+    gap: 0.4rem;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+}
+
+.media:hover{
+    background-color: #f3f2f1;
+    border: 2rem;
+}
+
+
+.media span{
+    font-weight: 900;
+    color: #00000099;
+    font-size: medium;
+}
+
 .more__emojis > svg:hover{
     background-color: #e7e3e399;
 }
@@ -218,5 +245,9 @@ button:hover{
     height: auto;
     padding: 0.8rem;
     cursor: pointer;
+}
+
+.media > img{
+    border-radius: 0.5rem;
 }
 

@@ -1,9 +1,18 @@
+.post{
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    padding: 0.9rem;
+    border-radius: 0.6rem;
+    background-color: white;
+
+}
 .post__header{
     display: grid;
     grid-template-columns: auto 1fr auto auto;
     grid-template-rows: 30% 30% 30%;
     gap: 0 0.6rem;
     font-size: medium;
+    position: relative;
 }
 
 .post__header > .image__wrapper{
@@ -91,4 +100,98 @@
 .icons > p{
     color: #00000099;
     font-size: small;
+}
+
+.reactions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.reactions > .reaction{
+    display: flex;
+    width: max-content;
+    gap: 0.3rem;
+    align-items: center;
+    font-weight: 800;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.reaction img{
+    height: 2rem;
+    width: auto;
+}
+
+.more__reacts {
+    display: none;
+}
+
+/* When hovering over the "reaction" div, show the "more__reacts" element */
+.reaction:hover + .more__reacts {
+    display: flex;
+    position: absolute;
+    inset: -120% auto auto auto;
+    z-index: 99;
+    justify-content: space-between;
+    align-items: center;
+    width: max-content;
+    gap: 0.5rem;
+    background-color: white;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    padding: 0.5rem 1rem;
+}
+
+.more__reacts img{
+    width: auto;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.more__reacts:hover{
+    display: flex;
+    position: absolute;
+    inset: -120% auto auto auto;
+    z-index: 99;
+    justify-content: space-between;
+    align-items: center;
+    width: max-content;
+    gap: 0.5rem;
+    background-color: white;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    padding: 0.5rem 1rem;
+}
+
+@keyframes emoji__hover__animation {
+    0% {
+        transform: scale(1);
+        transform: translateY(0);
+    }
+    
+    100% {
+        transform: scale(2);
+        transform: translateY(-0.2rem);
+    }
+}
+
+.more__reacts img:hover{
+    animation: emoji__hover__animation 100ms ease-out forwards;
+}
+
+.close__dots{
+    cursor: pointer;
+}
+
+
+.post__actions{
+    position: absolute;
+    inset: 2rem 2rem auto auto;
+    background-color: white;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    border-radius: 0.6rem;
+    padding: 0.7rem;
 }
