@@ -62,7 +62,8 @@
                     </svg>
                 </span>
             </div>
-            <div *ngIf="isProfileOpen" class="profile__links">
+            @if (isProfileOpen) {
+<div class="profile__links">
                 <div class="avatar__name__intro">
                     <div class="image__wrapper">
                         <img width="24" src="https://media.licdn.com/dms/image/D4E03AQE3d2b7tCzG2g/profile-displayphoto-shrink_100_100/0/1676728695506?e=1703721600&amp;v=beta&amp;t=8xYHRzce7eQXHyPO3kYNltzxzuhF0rrc-wm02lrxQGE" height="24" alt="El Ouali Mohammed" id="ember16" class="global-nav__me-photo evi-image ember-view">
@@ -87,6 +88,7 @@
                     <a href="">Sign Out</a>
                 </div>
             </div>
+}
         </div>
         <div class="commercial">
             <a href="#" [ngClass]="{'disabled-link': true}" (click)="toggleBesiness()">
@@ -102,7 +104,8 @@
                 </svg>
                 <span>Advertise</span>
             </a>
-            <div *ngIf="isBesinessOpen" class="besiness">
+            @if (isBesinessOpen) {
+<div class="besiness">
                 <div class="">
                     <div class="head">
                         <h2>For Business</h2>
@@ -216,6 +219,7 @@
                     </div>
                 </div>
             </div>
+}
         </div>
     </header>
     <section class="core__content">

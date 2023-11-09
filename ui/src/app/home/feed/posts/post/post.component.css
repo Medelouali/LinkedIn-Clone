@@ -195,3 +195,48 @@
     border-radius: 0.6rem;
     padding: 0.7rem;
 }
+
+.comments__main__input{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.7rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comments__main__input .image__wrapper{
+    width: 3rem;
+    height: 3rem;
+}
+
+.text__input{
+    border: 0.1px solid #b49e9ee6;
+    border-radius: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    padding: 0rem 0.5rem;
+    place-items: center;
+    gap: 1rem;
+}
+
+.text__input input{
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    justify-self: start;
+    font-size: medium;
+    width: 100%;
+}
+
+.text__input svg{
+    fill: #00000099;
+    cursor: pointer;
+    padding: 0.3rem;
+    width: 2.3rem;
+    height: auto;
+}
+
+.text__input svg:hover{
+    background-color: rgb(224, 238, 238);
+    border-radius: 50%;
+}

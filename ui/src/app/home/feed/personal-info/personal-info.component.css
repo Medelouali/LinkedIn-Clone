@@ -1,0 +1,76 @@
+.personal__info{
+    display: grid;
+    padding-bottom: 0.5rem;
+}
+
+
+
+.images{
+    width: 100%;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.images > img{
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.images .images__wrapper{
+    background-color: white;
+    padding: 0.1rem;
+    margin: auto;
+    position: relative;
+    bottom: 2.2rem;
+    border-radius: 50%;
+}
+
+.images__wrapper > .image__wrapper{
+    width: 4rem;
+    height: 4rem;
+}
+
+.inner__info{
+    padding: 0 0.9rem 0.9rem 0.9rem;
+}
+
+.inner__info h3{
+    text-align: center;
+    font-size: medium;
+    margin-bottom: 0.2rem;
+    margin: auto;
+}
+
+.inner__info p{
+    text-align: center;
+    font-size: small;
+    color: #00000099;
+    margin: auto;
+}
+
+.stat{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    padding: 0.3rem 0.9rem;
+}
+
+.stat:hover{
+    background-color: #f3f2f1;
+}
+
+.stat .key{
+    color: #00000099;
+    font-weight: 800;
+    font-size: small;
+}
+
+.stat .value{
+    color: #0A66C2;
+    font-weight: 800;
+    font-size: small;
+}

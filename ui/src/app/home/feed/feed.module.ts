@@ -10,6 +10,7 @@ import { SuggestionComponent } from './suggestion/suggestion.component';
 import { RecentsComponent } from './recents/recents.component';
 import { AddsComponent } from './adds/adds.component';
 import { PostComponent } from './posts/post/post.component';
+import { CommentComponent } from './posts/comment/comment.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { PostComponent } from './posts/post/post.component';
     SuggestionComponent,
     RecentsComponent,
     AddsComponent,
-    PostComponent
+    PostComponent,
+    CommentComponent
   ],
   imports: [
     CommonModule,
