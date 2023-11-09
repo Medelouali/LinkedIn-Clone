@@ -1,0 +1,41 @@
+.adds{
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+}
+
+.inner__adds{
+    display: flex;
+    width: max-content;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.image__wrapper{
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.linkedin__icon{
+    height: 4.5rem;
+    width: auto;
+}
+.adds p{
+    color: #00000099;
+    font-size: small;
+    text-align: center;
+}
+
+.try__for__free{
+    border: 1px solid #0A66C2;
+    color: #0A66C2;
+    font-size: medium;
+    font-weight: 800;
+    outline: none;
+    padding: 0.4rem 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
