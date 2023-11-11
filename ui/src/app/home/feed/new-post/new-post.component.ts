@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-new-post',
@@ -6,13 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./new-post.component.css']
 })
 export class NewPostComponent {
-  isNewPostOn=false;
+  isNewPostOn=signal(false);
 
   newPost(){
     this.toggleIsNewPostOn();
   }
 
   toggleIsNewPostOn(){
-    this.isNewPostOn=!this.isNewPostOn;
+    this.isNewPostOn.update(p=>!p);
   }
 }

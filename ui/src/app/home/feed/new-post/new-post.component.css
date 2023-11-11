@@ -39,7 +39,7 @@ button:hover{
 .media__types .media{
     display: grid;
     grid-template-columns: auto 1fr;
-    margin: 1rem auto;
+    margin: 1rem auto 0 auto;
 }
 
 .media svg{

@@ -21,8 +21,8 @@
             <span>Write article</span>
         </div>
     </div>
-    @if (isNewPostOn) {
-<section class="pop__up__wrapper">
+    @if (isNewPostOn()) {
+    <section class="pop__up__wrapper">
         <div class="top" (click)="toggleIsNewPostOn()"></div>
         <div class="bottom" (click)="toggleIsNewPostOn()"></div>
         <div class="left" (click)="toggleIsNewPostOn()"></div>
@@ -76,7 +76,7 @@
             </div>
         </div>
     </section>
-}
+    }
 </div>
 
 

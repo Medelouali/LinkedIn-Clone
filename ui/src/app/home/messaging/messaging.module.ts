@@ -6,18 +6,17 @@ import { MessagingComponent } from './messaging.component';
 import { AddsComponent } from '../feed/adds/adds.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageComponent } from './message/message.component';
+import { FeedModule } from '../feed/feed.module';
 
 
 @NgModule({
   declarations: [
     MessagingComponent,
-    // AddsComponent,
-    // MessagesComponent,
-    // MessageComponent
+    AddsComponent
   ],
   imports: [
     CommonModule,
-    MessagingRoutingModule
+    MessagingRoutingModule,
   ]
 })
 export class MessagingModule { }

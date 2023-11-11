@@ -1,0 +1,9 @@
+.messaging{
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.messaging .adds{
+    background-color: white;
+    padding: 1rem;
+}
