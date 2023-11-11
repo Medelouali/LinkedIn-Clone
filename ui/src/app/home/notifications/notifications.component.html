@@ -1,1 +1,67 @@
-<p>notifications works!</p>
+<div class="notifications">
+    <div class="manage">
+        <h4>Manage your notifications</h4>
+        <a href="#">View Settings</a>
+    </div>
+    <div class="notis">
+        <div class="nots__header">
+            <button class="btn selected">All</button>
+            <button class="btn">My Posts</button>
+            <button class="btn">Mentions</button>
+        </div>
+        <div class="nots">
+            <div class="not">
+                <img src="https://media.licdn.com/dms/image/C4D0BAQGlOM87UTBEeA/company-logo_100_100/0/1646227280189/welearn1_logo?e=1707955200&v=beta&t=SC6FtZIB9V14-4zma0vo_8ZFdVlxU_wnNTJ73qwZArE" alt="">
+                <div class="text">
+                    <strong>Intern: 1 </strong>
+                    <span>opportunity in </span>
+                    <strong>Morocco.</strong>
+                    <div class="">
+                        <button>View Job</button>
+                    </div>
+                </div>
+                <div class="time__dots">
+                    <span>15h</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></svg>
+                </div>
+            </div>
+            <div class="not">
+                <img src="https://media.licdn.com/dms/image/C560BAQG5QvGxuM1nwQ/company-logo_100_100/0/1669842853621/bcg_x_logo?e=1707955200&v=beta&t=cNC7zoEl3Hu8wPfGvU-mva6CNjy9AvxfIJWvMRQTDgQ" alt="">
+                <div class="text">
+                    <strong>Intern: 1 </strong>
+                    <span>opportunity in </span>
+                    <strong>Morocco.</strong>
+                    <div class="">
+                        <button>View Job</button>
+                    </div>
+                </div>
+                <div class="time__dots">
+                    <span>15h</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></svg>
+                </div>
+            </div>
+            @for (item of [1, 2, 2, 2, 2, 2]; track $index) {
+                <div class="not">
+                    <img src="https://media.licdn.com/dms/image/C560BAQG5QvGxuM1nwQ/company-logo_100_100/0/1669842853621/bcg_x_logo?e=1707955200&v=beta&t=cNC7zoEl3Hu8wPfGvU-mva6CNjy9AvxfIJWvMRQTDgQ" alt="">
+                    <div class="text">
+                        <strong>Intern: 1 </strong>
+                        <span>opportunity in </span>
+                        <strong>Morocco.</strong>
+                        <div class="">
+                            <button>View Job</button>
+                        </div>
+                    </div>
+                    <div class="time__dots">
+                        <span>15h</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></svg>
+                    </div>
+                </div>
+            }
+            
+        </div>
+        
+    </div>
+    <div class="adds">
+        <app-adds></app-adds>
+    </div>
+</div>

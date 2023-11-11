@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,16 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  isProfileOpen = false;
-  isBesinessOpen= false;
+  isProfileOpen = signal(false);
+  isBesinessOpen= signal(false);
 
   toggleProfile() {
-    if(this.isBesinessOpen)this.toggleBesiness();
-    this.isProfileOpen =!this.isProfileOpen;
+    if(this.isBesinessOpen())this.toggleBesiness();
+    this.isProfileOpen.update(p=>!p);
   }
 
   toggleBesiness(){
-    if(this.isProfileOpen)this.toggleProfile();
-    this.isBesinessOpen=!this.isBesinessOpen;
+    if(this.isProfileOpen())this.toggleProfile();
+    this.isBesinessOpen.update(p=>!p);
   }
 }

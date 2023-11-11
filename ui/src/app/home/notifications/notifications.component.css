@@ -1,0 +1,89 @@
+.notifications{
+    display: grid;
+    grid-template-columns: 30% 1fr 30%;
+    padding-top: 1rem;
+}
+
+.not{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+}
+
+.time__dots{
+    display: grid;
+    grid-template-rows: auto auto;
+    height: max-content;
+    color: #00000099;
+}
+
+.time__dots svg{
+    fill: #00000099;
+}
+
+.text button{
+    color: #0A66C2;
+    border: 0.1rem solid #0A66C2;
+    padding: 0.4rem 0.6rem;
+    border-radius: 1rem;
+    font-size: medium;
+    font-weight: 800;
+    margin-top: 0.6rem;
+    cursor: pointer;
+}
+
+.nots{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid pink;
+    display: grid;
+    gap: 1rem;
+}
+
+.not img{
+    width: 3rem;
+    height: auto;
+}
+
+.nots__header{
+    display: flex;
+    border-top: 1rem;
+    background-color: white;
+    border: 1px solid pink;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    gap: 1rem;
+}
+
+.nots__header .btn{
+    padding: 0.3rem 1rem;
+    font-size: large;
+    font-weight: 800;
+    border: 1px solid #01754F;
+    border-radius: 1rem;
+    color: #01754F;
+}
+
+.nots__header .selected{
+    background-color: #01754F;
+    color: white;
+}
+
+.manage{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid pink;
+    width: max-content;
+    justify-self: center;
+    height: max-content;
+    display: grid;
+    gap: 0.6rem;
+}
+.manage a{
+    font-weight: 800;
+    text-decoration: none;
+
+}

@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { NotificationsRoutingModule } from './notifications-routing.module';
 import { NotificationsComponent } from './notifications.component';
+import { AddsComponent } from '../feed/adds/adds.component';
 
 
 @NgModule({
   declarations: [
-    NotificationsComponent
+    NotificationsComponent,
+    AddsComponent
   ],
   imports: [
     CommonModule,

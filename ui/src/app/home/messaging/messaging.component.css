@@ -1,9 +1,167 @@
 .messaging{
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 20%;
+    place-items: center;
+    width: 90%;
+    height: 80vh;
+    background-color: white;
+    margin: 2rem auto;
+    gap: 2rem;
+    
+    background-color: #f3f2f1;
 }
 
 .messaging .adds{
     background-color: white;
     padding: 1rem;
+}
+
+.core__messaging{
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 2px;
+    height: 95%;
+    width: 100%;
+    margin: auto;
+    border: 1px solid #f3f2f1;
+    border-radius: 0.4rem;
+    background-color: white;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    border-radius: 0.5rem;
+}
+
+
+.messaging__header{
+    grid-area: 1/1/2/2;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+
+
+.search{
+    grid-area: 2/1/3/2;
+    width: calc(100% - 2rem);
+    height: 100%;
+    margin: auto;
+}
+
+.messages__list{
+    grid-area: 3/1/5/2;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.convs{
+    overflow-y: auto;
+    max-height: 50vh;
+}
+
+.conversation__header{
+    grid-area: 1/2/2/3;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.conversation__messages{
+    grid-area: 2/2/4/3;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.conversation__inputs{
+    grid-area: 4/2/5/3;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.messaging__header{
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    border-bottom: 1px solid #f3f2f1;
+    border-right: 1px solid #f3f2f1;
+}
+
+.messaging__header svg{
+    fill: #00000099;
+    width: 1.5rem;
+    height: auto;
+}
+
+.core__messaging .search{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.4rem;
+    background-color: #f3f2f1;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+}
+
+.search svg{
+    width: 1.5rem;
+    height: auto;
+}
+
+.search input{
+    outline: none;
+    border: none;
+    background-color: #f3f2f1;
+    font-size: medium;
+}
+
+.tabs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    
+}
+
+.tabs .selected{
+    border-bottom: 2px solid #00000099;
+}
+
+.tabs h4{
+    padding-bottom: 0.5rem;
+    width: 100%;
+}
+
+.conv{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 0.6rem 0;
+    gap: .5rem;
+}
+
+.image__wrapper{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.conv .name__time{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.last__message{
+    color: #00000099;
+    font-size: small;
+}
+
+.side{
+    border-bottom: 1px solid #f3f2f1;
+}
+
+.name__time span{
+    padding-right: 1rem;
 }

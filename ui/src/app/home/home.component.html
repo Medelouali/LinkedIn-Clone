@@ -62,7 +62,7 @@
                     </svg>
                 </span>
             </div>
-            @if (isProfileOpen) {
+            @if (isProfileOpen()) {
 <div class="profile__links">
                 <div class="avatar__name__intro">
                     <div class="image__wrapper">
@@ -104,7 +104,7 @@
                 </svg>
                 <span>Advertise</span>
             </a>
-            @if (isBesinessOpen) {
+            @if (isBesinessOpen()) {
 <div class="besiness">
                 <div class="">
                     <div class="head">
