@@ -1,0 +1,255 @@
+.jobs{
+    display: grid;
+    grid-template-columns: 20% 1fr 25%;
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    padding: 1rem 5%;
+}
+
+.job__card{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    height: max-content;
+}
+
+.left__section{
+    grid-area: 1/1/3/2;
+    height: max-content;
+    display: grid;
+    gap: 1rem;
+}
+
+.right__section{
+    grid-area: 1/3/3/4;
+    height: max-content;
+}
+
+.post__job{
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid #0A66C2;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 800;
+    font-size: medium;
+    color: #0A66C2;
+}
+
+.post__job svg{
+    fill: #0A66C2;
+}
+
+.jobs__sections{
+    grid-area: 2/2/3/3;
+    display: grid;
+    gap: 1rem;
+}
+
+.recent__searches{
+    grid-area: 1/2/2/3;
+}
+
+.listing{
+    display: grid;
+    gap: 1rem;
+}
+
+.listing__item{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+}
+
+.listing__item{
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.recent__searches .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+}
+
+.recent__searches .header span{
+    color: #00000099;
+    font-weight: 800;
+    padding: 0.2rem;
+    cursor: pointer;
+    border-radius: 0.1rem;
+}
+
+.recent__searches .header span:hover{
+    background-color: #f3f2f1;
+}
+
+.job__search{
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-top: 1rem;
+    border-bottom: 1px solid #f3f2f1;
+    padding-bottom: 0.7rem;
+}
+
+.show__more{
+    width: max-content;
+    margin: auto;
+    outline: none;
+    border: none;
+    background-color: white;
+    color: #0A66C2;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: medium;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+}
+
+.show__more:hover {
+    background-color: #f3f2f1;
+}
+
+.gray__color{
+    color: #00000099;
+}
+
+.job__card__{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.5rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+    color: #00000099;
+    border-bottom: 1px solid #f3f2f1;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.close__by__ignore{
+    align-self: flex-start;
+}
+
+.job__card__ .pic img{
+    width: 4rem;
+    height: auto;
+}
+
+.viewed{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: small;
+    color: #00000099;
+    cursor: pointer;
+}
+
+.job__card__ .parags{
+    display: grid;
+    gap: 0.5rem;
+}
+
+.job__card__ > .parags h4{
+    color: #0A66C2;
+}
+
+.viewed img{
+    width: 1rem;
+    height: auto;
+}
+
+.company__name{
+    color: black;
+}
+
+.viewed > span.view{
+    font-weight: 800;
+}
+
+.reason{
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.reason .image__wrapper{
+    width: 2rem;
+    height: 2rem;
+}
+
+.reason p{
+    font-size: small;
+}
+
+.jobs__section p{
+    color: #00000099;
+    margin-top: 0.2rem;
+}
+
+.show__all, .show__more__{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+    border-radius: 0 0 0.5rem 0.5rem;
+    background-color: white;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    font-size: medium;
+    font-weight: 800;
+    color: #00000099;
+}
+
+.show__all:hover{
+    background-color: #f3f2f1;
+}
+
+.show__all svg, .show__more__ svg{
+    fill: #00000099;
+}
+
+.show__more__{
+    display: flex;
+    justify-content: start;
+    padding-left: 0;
+}
+
+.right{
+    display: grid;
+    gap: 0.5rem;
+}
+.right section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+
+.right .desc{
+    font-size: small;
+    color: #00000099;
+}
+
+.right img{
+    border-radius: 0.5rem;
+}
+
+.right section a{
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+    font-size: medium;
+}

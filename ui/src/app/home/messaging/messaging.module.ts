@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MessagingRoutingModule } from './messaging-routing.module';
 import { MessagingComponent } from './messaging.component';
 import { AddsComponent } from '../feed/adds/adds.component';
+import { AddsModule } from '../feed/adds/adds.module';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { AddsComponent } from '../feed/adds/adds.component';
   imports: [
     CommonModule,
     MessagingRoutingModule,
+    AddsModule
   ]
 })
 export class MessagingModule { }
