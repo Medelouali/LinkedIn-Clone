@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: 30% 1fr 30%;
     padding-top: 1rem;
+    gap: 1rem;
+    padding: 1rem 5%;
 }
 
 .not{
@@ -76,7 +78,7 @@
     padding: 1rem;
     border-radius: 0.3rem;
     border: 1px solid pink;
-    width: max-content;
+    width: 100%;
     justify-self: center;
     height: max-content;
     display: grid;
@@ -86,4 +88,13 @@
     font-weight: 800;
     text-decoration: none;
 
+}
+
+.adds{
+    width: 100%;
+    height: max-content;
+    background-color: white;
+    border: 1px solid pink;
+    padding: 1rem;
+    border-radius: 0.3rem;
 }

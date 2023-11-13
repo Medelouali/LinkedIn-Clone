@@ -11,6 +11,7 @@ import { RecentsComponent } from './recents/recents.component';
 import { AddsComponent } from './adds/adds.component';
 import { PostComponent } from './posts/post/post.component';
 import { CommentComponent } from './posts/comment/comment.component';
+import { AddsModule } from './adds/adds.module';
 
 
 @NgModule({
@@ -21,13 +22,13 @@ import { CommentComponent } from './posts/comment/comment.component';
     PersonalInfoComponent,
     SuggestionComponent,
     RecentsComponent,
-    AddsComponent,
     PostComponent,
     CommentComponent
   ],
   imports: [
     CommonModule,
-    FeedRoutingModule
+    FeedRoutingModule,
+    AddsModule
   ]
 })
 export class FeedModule { }

@@ -1,0 +1,295 @@
+.network{
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 30% 1fr;
+    gap: 0.7rem;
+    padding: 1rem 8%;
+}
+
+.network__card{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid pink;
+    width: 100%;
+    height: 100%;
+}
+
+.network .manage__section{
+    grid-area: 1/1/4/2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: max-content;
+    padding: 1rem 0;
+}
+
+.network .pending__invs{
+    grid-area: 1/2/2/3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pending__invs h3{
+    color: #00000099;
+    font-size: medium;
+    cursor: pointer;
+    padding: 0.2rem;
+    border-radius: 0.1rem;
+}
+
+.pending__invs h3:hover{
+    background-color: #f3f2f1;
+}
+
+.network .premium__section{
+    grid-area: 2/2/3/3;
+    display: grid;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.close{
+    position: absolute;
+    inset: 1rem 1rem auto auto;
+    border-radius: 50%;
+    padding: 0.5rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.close:hover{
+    background-color: #f3f2f1;
+}
+
+.members p{
+    font-size: small;
+    color: #00000099;
+}
+
+.premium__section > p{
+    color: #00000099;
+}
+
+.members{
+    display: flex;
+    gap: 0rem;
+    align-items: center;
+}
+
+.members .pics{
+    display: flex;
+}
+
+.network .suggestions__cards{
+    grid-area: 3/2/4/3;
+}
+
+.image__wrapper{
+    width: 2rem;
+    height: 2rem;
+}
+
+.small__para{
+    font-size: small;
+}
+
+.premium__section button{
+    width: max-content;
+    padding: 0.5rem 0.8rem;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    background-color: #F9C982;
+    font-size: medium;
+    font-weight: 800;
+}
+
+.suggestions__cards .suggestions__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.suggestions__cards .cards{
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-bottom: 1rem;
+}
+
+.suggestion__card{
+    width: 100%; /* This will change */
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    height: max-content;
+    padding-bottom: 2rem;
+    display: grid;
+    place-items: center;
+}
+
+.card__header{
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.card__header .background__image{
+    width: 110%;
+    height: auto;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card__header .image__wrapper{
+    width: 5rem;
+    height: 5rem;
+}
+
+.card__header .main__image{
+    position: absolute;
+    top: 1rem;
+    z-index: 3;
+    margin: auto;
+}
+.card__header .main__image__creator{
+    justify-self: start;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-left: 1rem;
+}
+
+.creator__card{
+    display: grid;
+    place-items: start;
+}
+
+.creator__card .name{
+    margin-top: 1.3rem;
+    margin-left: 1rem;
+}
+
+.creator__card .job{
+    margin-left: 1rem;
+}
+
+.creator__card p{
+    text-align: start;
+}
+
+.suggestion__card .close__card{
+    position: absolute;
+    inset: 1rem 1rem auto auto;
+    z-index: 3;
+    background-color: #00000099;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    padding: 0.3rem;
+}
+
+.close__card svg{
+    fill: white;
+    width: 1rem;
+    height: auto;
+}
+
+.name{
+    margin-top: 3.3rem;
+    margin-bottom: 0.2rem;
+    text-align: center;
+}
+
+.job{
+    max-width: 80%;
+    text-align: center;
+    color: #00000099;
+}
+
+.mutual__connections{
+    text-align: center;
+    font-size: small;
+    color: #00000099;
+    margin-top: 1.5rem;
+}
+
+.connect__button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem;
+    color: #0A66C2;
+    border: 1px solid #0A66C2;
+    border-radius: 1.5rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    margin-top: 1rem;
+    font-size: medium;
+    background-color: white;
+}
+
+.connect__button svg{
+    fill: #0A66C2;
+}
+
+.creator__card .members{
+    margin: auto 1rem;
+}
+
+.creator__card .members .image__wrapper{
+    width: 2rem;
+    height: 2rem;
+}
+
+.creator__card .connect__button{
+    margin: 1rem;
+    text-align: center;
+    width: calc(100% - 2rem);
+    padding: 0.2rem auto;
+}
+
+
+.manage__section > p{
+    font-size: medium;
+    font-weight: 400;
+    margin: 0 1rem;
+}
+
+.manage__section .action{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    place-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+}
+
+.manage__section .action:hover{
+    background-color: #f3f2f1;
+}
+
+.manage__section .action span{
+    color: #00000099;
+    font-size: medium;
+    font-weight: 400;
+}
+
+.action svg{
+    width: 1.5rem;
+    height: auto;
+    fill: #00000099;
+}
+
+
+
+.action .action__title{
+    justify-self: start;
+}
+
+.adds{
+    margin: 0.2rem 1rem;
+}

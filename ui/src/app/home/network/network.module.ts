@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NetworkRoutingModule } from './network-routing.module';
 import { NetworkComponent } from './network.component';
+import { AddsModule } from '../feed/adds/adds.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { NetworkComponent } from './network.component';
   ],
   imports: [
     CommonModule,
-    NetworkRoutingModule
+    NetworkRoutingModule,
+    AddsModule
   ]
 })
 export class NetworkModule { }

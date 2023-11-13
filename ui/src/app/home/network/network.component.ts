@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-network',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./network.component.css']
 })
 export class NetworkComponent {
+  isPremiumFeatureOn=signal(true);
 
+  togglePremiumFeature(){
+    this.isPremiumFeatureOn.update(v=>!v);
+  }
 }
