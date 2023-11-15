@@ -29,3 +29,7 @@ button{
 svg{
     cursor: pointer;
 }
+
+html{
+    scroll-behavior: smooth;
+}

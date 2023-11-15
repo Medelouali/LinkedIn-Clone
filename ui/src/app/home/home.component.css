@@ -151,17 +151,30 @@ a span{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* position: relative; */
 }
 
-.commercial a{
+.commercial a, .commercial .business__action{
     display: grid;
     place-items: center;
     text-decoration: none;
+    gap: 0.5rem;
+}
+
+.business__action span{
+    color: #00000099;
+}
+
+.commercial span{
+    font-size: small;
 }
 
 .commercial svg{
     color: #00000099;
+}
+
+.business__action svg{
+    width: 1.2rem;
+    height: auto;
 }
 
 

@@ -12,8 +12,8 @@
         </form>
         <div class="messages__list">
             <div class="tabs">
-                <h4 class="selected">Focused</h4>
-                <h4>Other</h4>
+                <h4 [ngClass]="{'selected': currentTab()==='FOCUSED'}" (click)="setCurrentTab('FOCUSED')">Focused</h4>
+                <h4 [ngClass]="{'selected': currentTab()==='OTHER'}" (click)="setCurrentTab('OTHER')">Other</h4>
             </div>
             <div class="convs">
                 @for (item of [1, 2, 3, 3, 3, 4, 3, 4, 3, 3]; track $index) {
@@ -36,13 +36,89 @@
         </div>
 
         <div class="conversation__header">
-            Ayoub Boulbaz
+            <div class="name__online__job">
+                <h4>John Doe</h4>
+                <div class="status"> 
+                    <span class="red__dot"></span>
+                    <div class="online__status">Active now</div> 
+                </div>
+            </div>
+            <div class="conversation__actions">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                    <path d="M2 8v8a3 3 0 003 3h13V5H5a3 3 0 00-3 3zm4 3h3V8h2v3h3v2h-3v3H9v-3H6zm17-4v10h-2l-2-1V8l2-1z"></path>
+                </svg>
+                <svg aria-hidden="true" focusable="false" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8,2.77,9.6,6l3.59.53-2.6,2.54.61,3.58L8,11,4.8,12.67l.61-3.58L2.81,6.55,6.4,6,8,2.77M8,.5,5.73,5.11.67,5.85,4.33,9.43,3.47,14.5,8,12.11l4.53,2.39-.86-5.07,3.66-3.58-5.06-.74L8,.5Z"></path>
+                </svg>
+            </div>
         </div>
         <div class="conversation__messages">
-            Messages
+            @for (item of [1, 2, 2, 2, 2, 2, 2, 3, 3, 3]; track $index) {
+                <div class="message__wrapper">
+                    <div class="date__line">
+                        <span class="left__line"></span>
+                        <span class="date__value">OCT 25</span>
+                        <span class="right__line"></span>
+                    </div>
+                    <div class="message">
+                        <div class="pic">
+                            <div class="image__wrapper">
+                                <img width="24" src="https://media.licdn.com/dms/image/C4D03AQGmZ37UEk5MSw/profile-displayphoto-shrink_100_100/0/1625660809527?e=1704931200&v=beta&t=CoJfiVXBAfsONaKhNchda0ijKnbBcTvQvUEVw0PC60M" height="24" alt="El Ouali Mohammed" id="ember16" class="global-nav__me-photo evi-image ember-view">
+                            </div>
+                        </div>
+                        <div class="message__content">
+                            <div class="name__timestamp">
+                                <h4 class="name">John Doe ·</h4>
+                                <span class="time__stamp">10:44 AM</span>
+                            </div>
+                            <p class="text__with__media">
+                                That's awesome Ayoub, I am curious, as a software consultant what are the main tasks you do on basically on daily basis, forgive me for reaching out and starting asking questions:)
+                        </div>
+                        <div class="message__reactions__emojis">
+                            <span class="emoji__icon">👏</span>
+                            <span class="emoji__icon">👍</span>
+                            <span class="emoji__icon">👎</span>
+                            <span class="emoji__icon">😆</span>
+                            <span class="material-symbols-outlined">add_reaction</span>
+                            <span class="material-symbols-outlined">more_horiz</span>
+                        </div>
+                    </div>
+                </div>
+            }
+            
+            
         </div>
         <div class="conversation__inputs">
-            Input
+            <div class="input__section">
+                <textarea name="" id="" cols="30" rows="10" placeholder="write a message..."></textarea>
+                @if(isInputExtended()){
+                    <svg (click)="toggleIsInputExtended()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+                        <path d="M1 5l7 4.61L15 5v2.39L8 12 1 7.39z"></path>
+                    </svg>
+                }
+                @if (!isInputExtended()) {
+                    <svg (click)="toggleIsInputExtended()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+                        <path d="M15 11L8 6.39 1 11V8.61L8 4l7 4.61z"></path>
+                    </svg>
+                }
+            </div>
+            <section class="reactions__send">
+                <div class="reactions">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Zm140-360q25 0 42.5-17.5T400-620q0-25-17.5-42.5T340-680q-25 0-42.5 17.5T280-620q0 25 17.5 42.5T340-560Z"/></svg>
+                    <svg class="attachment" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M460-80q-92 0-156-64t-64-156v-420q0-66 47-113t113-47q66 0 113 47t47 113v380q0 42-29 71t-71 29q-42 0-71-29t-29-71v-380h60v380q0 17 11.5 28.5T460-300q17 0 28.5-11.5T500-340v-380q0-42-29-71t-71-29q-42 0-71 29t-29 71v420q0 66 47 113t113 47q66 0 113-47t47-113v-420h60v420q0 92-64 156T460-80Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                        <path d="M10 11v6H8.5l-.15-1.05C7.94 16.56 7.25 17 6 17h-.5C3.57 17 2 15.43 2 13.5v-3C2 8.57 3.57 7 5.5 7H9v2H5.5C4.67 9 4 9.67 4 10.5v3c0 .83.67 1.5 1.5 1.5h1c.83 0 1.5-.67 1.5-1.5V13H6v-2h4zm13-2V7h-7v10h2v-4h4v-2h-4V9h5zm-11 8h2V7h-2v10z"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                        <path d="M8 10.5A1.5 1.5 0 119.5 12 1.5 1.5 0 018 10.5zm6.5 1.5a1.5 1.5 0 10-1.5-1.5 1.5 1.5 0 001.5 1.5zm7.5 0A10 10 0 1112 2a10 10 0 0110 10zm-2 0a8 8 0 10-8 8 8 8 0 008-8zm-8 4a6 6 0 01-4.24-1.76l-.71.76a7 7 0 009.89 0l-.71-.71A6 6 0 0112 16z"></path>
+                    </svg>
+                </div>
+                <div class="sending__section">
+                    <button class="send__message">Send</button>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></svg>
+                </div>
+            </section>
         </div>
     </div>
     <div class="adds">
