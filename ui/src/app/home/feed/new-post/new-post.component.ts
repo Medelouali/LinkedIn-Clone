@@ -7,6 +7,7 @@ import { Component, signal } from '@angular/core';
 })
 export class NewPostComponent {
   isNewPostOn=signal(false);
+  areMorePostTypesOn=signal(false);
 
   newPost(){
     this.toggleIsNewPostOn();
