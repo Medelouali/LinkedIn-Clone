@@ -5,9 +5,9 @@ import com.ensa.posts.models.PostVisibility;
 import lombok.Data;
 
 @Data
-public class EventPostDto {
+public class PostDto {
     private String content;
     private PostVisibility visibility;
-    private String location;
     private Long authorId;
+    private PostTypeEnum postTypeEnum;
 }

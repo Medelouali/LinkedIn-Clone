@@ -1,5 +1,6 @@
-package com.ensa.posts.models;
+package com.ensa.posts.models.postTypes;
 
+import com.ensa.posts.models.PostType;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.Getter;
@@ -9,6 +10,6 @@ import lombok.Setter;
 @Setter
 @Getter
 @DiscriminatorValue("NormalPost")
-public class NormalPost extends Post{
+public class NormalPost extends PostType {
 
 }
