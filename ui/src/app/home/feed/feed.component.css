@@ -9,7 +9,8 @@
 
 .feed__wrapper{
     border-radius: 0.5rem;
-    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    /* box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2); */
+    box-shadow: 0px 0px 0px 1px rgb(140 140 140/.2);
     padding: 0.9rem;
     background-color: white;
     margin: 0.6rem;

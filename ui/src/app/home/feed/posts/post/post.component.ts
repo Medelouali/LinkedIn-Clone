@@ -7,7 +7,7 @@ import { inputEmojis } from 'src/assets/emojis/emojis';
   styleUrls: ['./post.component.css', "../post/post.component.css"]
 })
 export class PostComponent {
-  isCommentOpen=signal(true);
+  isCommentOpen=signal(false);
   isEmojisOn=signal(false);
   commnets = signal(dummyComments);
   emojisIcons = signal(inputEmojis);

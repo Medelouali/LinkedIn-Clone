@@ -53,51 +53,52 @@
                 </svg>
             </div>
         </div>
-        <div class="conversation__messages">
-            @for (item of [1, 2, 2, 2, 2, 2, 2, 3, 3, 3]; track $index) {
-                <div class="message__wrapper">
-                    <div class="date__line">
-                        <span class="left__line"></span>
-                        <span class="date__value">OCT 25</span>
-                        <span class="right__line"></span>
-                    </div>
-                    <div class="message">
-                        <div class="pic">
-                            <div class="image__wrapper">
-                                <img width="24" src="https://media.licdn.com/dms/image/C4D03AQGmZ37UEk5MSw/profile-displayphoto-shrink_100_100/0/1625660809527?e=1704931200&v=beta&t=CoJfiVXBAfsONaKhNchda0ijKnbBcTvQvUEVw0PC60M" height="24" alt="El Ouali Mohammed" id="ember16" class="global-nav__me-photo evi-image ember-view">
+        @if (!isInputExtended()) {
+            <div class="conversation__messages">
+                @for (item of [1, 2, 2, 2, 2, 2, 2, 3, 3, 3]; track $index) {
+                    <div class="message__wrapper">
+                        <div class="date__line">
+                            <span class="left__line"></span>
+                            <span class="date__value">OCT 25</span>
+                            <span class="right__line"></span>
+                        </div>
+                        <div class="message">
+                            <div class="pic">
+                                <div class="image__wrapper">
+                                    <img width="24" src="https://media.licdn.com/dms/image/C4D03AQGmZ37UEk5MSw/profile-displayphoto-shrink_100_100/0/1625660809527?e=1704931200&v=beta&t=CoJfiVXBAfsONaKhNchda0ijKnbBcTvQvUEVw0PC60M" height="24" alt="El Ouali Mohammed" id="ember16" class="global-nav__me-photo evi-image ember-view">
+                                </div>
+                            </div>
+                            <div class="message__content">
+                                <div class="name__timestamp">
+                                    <h4 class="name">John Doe ·</h4>
+                                    <span class="time__stamp">10:44 AM</span>
+                                </div>
+                                <p class="text__with__media">
+                                    That's awesome Ayoub, I am curious, as a software consultant what are the main tasks you do on basically on daily basis, forgive me for reaching out and starting asking questions:)
+                            </div>
+                            <div class="message__reactions__emojis">
+                                <span class="emoji__icon">👏</span>
+                                <span class="emoji__icon">👍</span>
+                                <span class="emoji__icon">👎</span>
+                                <span class="emoji__icon">😆</span>
+                                <span class="material-symbols-outlined">add_reaction</span>
+                                <span class="material-symbols-outlined">more_horiz</span>
                             </div>
                         </div>
-                        <div class="message__content">
-                            <div class="name__timestamp">
-                                <h4 class="name">John Doe ·</h4>
-                                <span class="time__stamp">10:44 AM</span>
-                            </div>
-                            <p class="text__with__media">
-                                That's awesome Ayoub, I am curious, as a software consultant what are the main tasks you do on basically on daily basis, forgive me for reaching out and starting asking questions:)
-                        </div>
-                        <div class="message__reactions__emojis">
-                            <span class="emoji__icon">👏</span>
-                            <span class="emoji__icon">👍</span>
-                            <span class="emoji__icon">👎</span>
-                            <span class="emoji__icon">😆</span>
-                            <span class="material-symbols-outlined">add_reaction</span>
-                            <span class="material-symbols-outlined">more_horiz</span>
-                        </div>
                     </div>
-                </div>
-            }
-            
-            
-        </div>
-        <div class="conversation__inputs">
-            <div class="input__section">
-                <textarea name="" id="" cols="30" rows="10" placeholder="write a message..."></textarea>
+                }
+                
+                
+            </div>
+        }
+        <div class="conversation__inputs" [ngClass]="{ 'extended__input__item': isInputExtended() }">
+            <div class="input__section" [ngClass]="{ 'input__section__extended': isInputExtended() }">
+                <textarea [ngClass]="{ 'extended__input': isInputExtended() }" name="" id="" cols="30" rows="10" placeholder="write a message..."></textarea>
                 @if(isInputExtended()){
                     <svg (click)="toggleIsInputExtended()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
                         <path d="M1 5l7 4.61L15 5v2.39L8 12 1 7.39z"></path>
                     </svg>
-                }
-                @if (!isInputExtended()) {
+                }@else {
                     <svg (click)="toggleIsInputExtended()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
                         <path d="M15 11L8 6.39 1 11V8.61L8 4l7 4.61z"></path>
                     </svg>

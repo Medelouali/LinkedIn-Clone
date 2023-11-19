@@ -99,7 +99,7 @@
     height: auto;
 }
 
-.core__messaging .search{
+.search{
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 0.4rem;
@@ -344,4 +344,23 @@ p.text__with__media{
 
 .input__section svg:hover{
     background: #f3f2f1;
+}
+
+.extended__input{
+    height: 100%;
+}
+
+.extended__input__item{
+    grid-area: 3/2/5/3;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.input__section__extended{
+    height: 80%;
+}
+
+.input__section__extended textarea{
+    height: 100%;
 }

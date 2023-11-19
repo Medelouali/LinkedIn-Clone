@@ -6,7 +6,6 @@ const routes: Routes = [
   { 
     path: '', component: HomeComponent,
     children: [
-      // { path: '', loadChildren: () => import('./feed/feed.module').then(m => m.FeedModule)  },
       { 
         path: 'feed', 
         loadChildren: () => import('./feed/feed.module').then(m => m.FeedModule) 
@@ -31,9 +30,9 @@ const routes: Routes = [
         path: 'profile', 
         loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) 
       },
+      { path: "", redirectTo: "/feed", pathMatch: 'full' },
     ]
   },
-  // { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

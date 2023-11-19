@@ -15,10 +15,7 @@ const routes: Routes = [
     path: 'register', 
     loadChildren: () => import('./register/register.module').then(m => m.RegisterModule) 
   },
-  { 
-    path: '**', 
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule) 
-  } // Just for demo purposes
+  { path: "**", redirectTo: "/home", pathMatch: 'full' },
 ];
 
 @NgModule({

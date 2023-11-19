@@ -7,10 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="messages" />
         <module name="search" />
+        <module name="jobs" />
+        <module name="api-gateway" />
+        <module name="messages" />
         <module name="linkediners" />
+        <module name="posts" />
         <module name="notifications" />
+        <module name="network" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

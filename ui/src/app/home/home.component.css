@@ -328,3 +328,48 @@ a span{
         padding: 1rem;
     }
 }
+
+
+.messages{
+    display: flex;
+    flex-direction: row-reverse;
+    position: fixed;
+    inset: 90vh 1rem auto auto;
+    z-index: 3;
+    border-radius:  0.5rem 0.5rem 0 0;
+    padding-top: 0;
+    transition: inset 0.5s ease;
+    gap: 1rem;
+}
+
+.open__messages{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    position: fixed;
+    inset: auto 1rem 0 auto;
+    z-index: 3;
+    border-radius:  0.5rem 0.5rem 0 0;
+    padding-top: 0;
+    transition: inset 0.5s ease;
+    gap: 1rem;
+}
+
+.show__conversation{
+    position: fixed;
+    inset: auto 1rem 0 auto;
+    z-index: 3;
+    border-radius:  0.5rem 0.5rem 0 0;
+    padding-top: 0;
+    transition: inset 0.5s ease;
+}
+
+.hide__conversation{
+    position: relative;
+    transform: translateY(70vh);
+    z-index: 3;
+    border-radius:  0.5rem 0.5rem 0 0;
+    padding-top: 0;
+    transition: inset 0.5s ease;
+}
+

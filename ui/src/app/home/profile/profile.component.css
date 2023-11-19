@@ -1,0 +1,306 @@
+.profile{
+    display: grid;
+    grid-template-columns: 1fr 30%;
+    width: 70vw;
+    margin: auto;
+    padding: 1vh 0;
+    gap: 1rem;
+    max-width: 100%;
+}
+
+.profile > .info{
+    display: grid;
+    gap: 0.7rem;
+    height: max-content;
+    width: 100%;
+    max-width: 100%;
+}
+
+.profile > .info > div, .profile > .people__cards > div{
+    box-shadow: 0px 0px 0px 1px rgb(140 140 140/.2);
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.profile > .people__cards{
+    display: grid;
+    gap: 0.7rem;
+    width: 100%;
+}
+
+.head__language{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.language__url{
+    display: grid;
+    gap: 1rem;
+}
+
+.language p{
+    color: #00000099;
+}
+
+.lang__line{
+    border-bottom: 1px solid pink;
+    padding-bottom: 1rem;
+}
+
+.person__card{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.person__card .image__wrapper{
+    width: 2rem;
+    height: 2rem;
+}
+
+.connect__send__message{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    border: 1px solid #00000099;
+    color: #00000099;
+    font-weight: 800;
+    font-size: medium;
+}
+
+.connect__send__message svg{
+    fill: #00000099;
+}
+
+.person__data{
+    display: grid;
+    gap: 0.5rem;
+}
+
+.person__data button{
+    width: max-content;
+}
+.person__data .card__header{
+    display: flex;
+}
+
+.card__header span{
+    color: #00000099;
+}
+
+.people__cards{
+    display: grid;
+    gap: 1rem;
+}
+
+.analytics{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left__analytics , .right__analytics{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.left__analytics span{
+    font-size: small;
+    color: #00000099;
+}
+
+.banner__wrapper{
+    position: relative;
+    padding: 0;
+    padding-bottom: 2rem;
+    width: 100%;
+}
+
+.banner__image{
+    width: calc(100% + 2rem);
+    transform: translateX(-1rem) translateY(-1rem);
+    height: auto;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.image__banner__wrapper{
+    position: absolute;
+    inset: 6rem auto auto 2vw;
+    background-color: white;
+    width: max-content;
+    height: max-content;
+    padding: 0.2rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.image__banner__wrapper .image__wrapper{
+    width: 7rem;
+    height: 7rem;
+}
+
+span.edit{
+    position: absolute;
+    inset: 1rem 1rem auto auto;
+    background-color: white;
+    padding: 0.2rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+span.edit svg{
+    fill: #0A66C2;
+}
+
+.edit__{
+    position: absolute;
+    inset: auto 1rem auto auto;
+}
+
+.name__work__place{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.name__work__place{
+    display: grid;
+    grid-template-columns: auto 40%;
+    gap: 1fr;
+}
+
+.name__work__place img{
+    width: 1.5rem;
+    height: auto;
+}
+
+.banner__wrapper >.bio{
+    width: 60%;
+}
+
+.talk__about{
+    color: #00000099;
+    margin-top: 0.5rem;
+}
+
+.place{
+    color: #00000099;
+}
+
+.place a{
+    color: #0A66C2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.my__website{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #0A66C2;
+    line-height: 2rem;
+}
+
+.my__website svg{
+    fill: #0A66C2;
+}
+
+.followers__connections{
+    display: flex;
+    gap: 0.5rem;
+    color: #0A66C2;
+    font-weight: 600;
+}
+
+.followers__connections a{
+    text-decoration: none;
+}
+
+.banner__actions{
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.banner__actions button{
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    font-weight: 800;
+    font-size: medium;
+    border: 1px solid #0A66C2;
+}
+
+.banner__actions .open__to{
+    background-color: #0A66C2;
+    color: white;
+}
+
+.banner__actions .add__profile__section{
+    background-color: white;
+    color: #0A66C2;
+}
+
+.banner__actions .more{
+    color: #00000099;
+    border: 1px solid #00000099;
+}
+
+.get__started__cards{
+    overflow-x: auto; 
+    white-space: nowrap;
+}
+
+.get__started__card{
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: 1px solid #f3f2f1;
+    position: relative;
+    padding-right: 3rem;
+    width: max-content;
+    display: inline;
+}
+
+.item svg{
+    position: absolute;
+    inset: 1rem 1rem auto auto;
+}
+
+.get__started__card .open__to__work{
+    font-weight: 800;
+}
+
+.item h4{
+    color: #0A66C2;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px; /* Adjust the gap between items as needed */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
+}
+  
+.item {
+    display: inline-block; /* Ensure items are inline */
+    border: 1px solid #f3f2f1;
+    padding: 10px;
+    position: relative;
+    padding-right: 4rem;
+    width: max-content;
+    border-radius: 0.5rem;
+}
+

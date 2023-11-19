@@ -225,4 +225,18 @@
     <section class="core__content">
         <router-outlet></router-outlet>
     </section>
+    <div [ngClass]="{'open__messages': isMessagesOpen(), 'messages': !isMessagesOpen()}">
+        <app-messages (setCurrentMessage)="setCurrentMessage($event)" (messagesEvent)="toggleMessages()"></app-messages>
+        @if (isMessagesOpen() && lastConversation()!==null) {
+            <div [ngClass]="{'hide__conversation': lastConversation()!==null && currentConversation()!==null}">
+                <app-message [convId]="lastConversation()" (closeUp)="lastConversation.set(null)"></app-message>
+            </div> 
+        } 
+        @if (isMessagesOpen() && currentConversation()!==null) {
+            <div class="">
+                <app-message [convId]="currentConversation()" (closeUp)="currentConversation.set(null)"></app-message>
+            </div> 
+        } 
+        
+    </div>
 </main>

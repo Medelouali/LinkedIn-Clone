@@ -25,6 +25,10 @@
     <module>messages</module>
     <module>linkediners</module>
     <module>search</module>
+    <module>posts</module>
+    <module>jobs</module>
+    <module>network</module>
+    <module>api-gateway</module>
   </modules>
 
   <dependencyManagement>
