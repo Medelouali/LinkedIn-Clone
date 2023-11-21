@@ -1,0 +1,181 @@
+.comment{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 0.2rem 0.5rem;
+}
+
+.comment .pic{
+    grid-area: 1/1/2/2;
+}
+
+.comment .main__comment{
+    grid-area: 1/2/2/3;
+    background-color: #EDF3F8;
+    padding: 0.5rem;
+    border-radius: 0  0.5rem 0.5rem 0.5rem ;
+}
+
+.reactions{
+    grid-area: 2/2/3/3;
+    padding: 0.5rem;
+}
+
+.reactions .like{
+    font-size: small;
+    font-weight: 800;
+    color: #00000099;
+}
+
+.replies, .replies__number, .reactions__number{
+    font-size: small;
+    /* font-weight: 800; */
+    /* color: #00000099; */
+}
+
+.comment .sub__comments{
+    grid-area: 3/2/4/3;
+}
+
+.comment .comments__main__input{
+    grid-area: 4/2/5/3;
+}
+
+.name__dots{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name__dots .name{
+    font-size: medium;
+    font-weight: 800;
+}
+
+.main__comment .job{
+    font-size: small;
+    font-weight: 200;
+    color: #00000099;
+}
+
+.name__dots .dots{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0.2rem;
+    place-items: center;
+    width: max-content;
+    font-size: small;
+    font-weight: 100;
+    color: #00000099;
+}
+
+.text__comment{
+    margin-top: 0.7rem;
+    font-size: medium;
+    font-weight: 200;
+}
+
+.reactions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    width: max-content;
+    position: relative;
+}
+
+.more__reacts:hover{
+    display: flex;
+    position: absolute;
+    inset: -120% auto auto auto;
+    z-index: 99;
+    justify-content: space-between;
+    align-items: center;
+    width: max-content;
+    gap: 0.5rem;
+    background-color: white;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    padding: 0.5rem 1rem;
+}
+
+.more__reacts {
+    display: none;
+}
+
+.reaction:hover + .more__reacts {
+    display: flex;
+    position: absolute;
+    inset: -110% auto auto auto;
+    z-index: 99;
+    justify-content: space-between;
+    align-items: center;
+    width: max-content;
+    gap: 1rem;
+    background-color: white;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    padding: 0.5rem 1rem;
+}
+
+.more__reacts img{
+    width: auto;
+    height: 1.9rem;
+    cursor: pointer;
+}
+
+.more__reacts:hover{
+    display: flex;
+    position: absolute;
+    inset: -110% auto auto auto;
+    z-index: 99;
+    justify-content: space-between;
+    align-items: center;
+    width: max-content;
+    gap: 1rem;
+    background-color: white;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+    padding: 0.5rem 1rem;
+}
+
+@keyframes emoji__hover__animation {
+    0% {
+        transform: scale(1);
+        transform: translateY(0);
+    }
+    
+    100% {
+        /* transform: ; */
+        transform: translateY(-0.3rem) scale(1.5);
+    }
+}
+
+.more__reacts img:hover{
+    animation: emoji__hover__animation 200ms ease-out forwards;
+}
+
+
+.like{
+    height: max-content;
+    cursor: pointer;
+    padding: 0.1rem;
+}
+
+.like:hover{
+    background-color: #EDF3F8;
+}
+
+.dot{
+    font-size: larger;
+    font-weight: bolder;
+    width: 0.2rem;
+    height: 0.2rem;
+    border-radius: 50%;
+    background-color: #00000099;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+

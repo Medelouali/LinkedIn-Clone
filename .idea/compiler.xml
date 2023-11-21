@@ -13,6 +13,7 @@
         <module name="messages" />
         <module name="linkediners" />
         <module name="posts" />
+        <module name="eureka-server" />
         <module name="notifications" />
         <module name="network" />
       </profile>

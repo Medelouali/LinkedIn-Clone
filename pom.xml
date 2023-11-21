@@ -28,7 +28,9 @@
     <module>posts</module>
     <module>jobs</module>
     <module>network</module>
+    <module>clients</module>
     <module>api-gateway</module>
+    <module>eureka-server</module>
   </modules>
 
   <dependencyManagement>

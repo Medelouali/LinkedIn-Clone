@@ -1,6 +1,12 @@
-version: '3'  # Specify the Docker Compose file version
-
-services:    # Define the services (containers)
+version: "3"
+services:
+  db:
+    image: postgres:12
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=sonarqube
+      - POSTGRES_PASSWORD=sonarpass
+      - POSTGRES_DB=sonarqube
   mysql:
     image: mysql:latest
     ports:
@@ -10,3 +16,13 @@ services:    # Define the services (containers)
       - MYSQL_DATABASE=linkedin-clone
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  sonarqube:
+    image: sonarqube
+    environment:
+      - SONARQUBE_JDBC_USERNAME=sonarqube
+      - SONARQUBE_JDBC_PASSWORD=sonarpass
+      - SONARQUBE_JDBC_URL=jdbc:postgresql://db:5432/sonarqube
+    ports:
+      - "9000:9000"
+      - "9092:9092"

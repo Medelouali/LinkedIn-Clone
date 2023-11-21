@@ -1,0 +1,75 @@
+<div class="comment">
+    <div class="pic">
+        <div class="image__wrapper" [style]="'width: calc(2.5rem - '+ratio+'rem);'+'height: calc(2.5rem - '+ratio+'rem);'">
+            <img width="24" [src]="comment?.commenterAvatar" height="24" alt="El Ouali Mohammed" id="ember16" class="global-nav__me-photo evi-image ember-view">
+        </div>
+    </div>
+    <div class="main__comment">
+        <div class="name__dots">
+            <p class="name">{{comment?.commenterName}}</p>
+            <div class="dots">
+                <span class="time">
+                    2d
+                </span>
+                <span class="dots">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></svg>
+                </span>
+            </div>
+        </div>
+        <span class="job">{{comment?.commenterJob}}</span>
+        <p class="text__comment">{{comment?.commentText}}</p>
+    </div>
+    <div class="reactions">
+        <span class="like reaction">Like</span>
+        <div class="more__reacts">
+            <img src="https://www.userflow.nl/images/linkedin-funny-emoticon-250.png" alt="Laugh">
+            <img src="https://www.userflow.nl/images/Linkedin-Like-Icon-Thumbup250.png" alt="Like">
+            <img src="https://www.userflow.nl/images/Linkedin-Celebrate-Icon-ClappingHands250.png" alt="Clap">
+            <img src="https://www.userflow.nl/images/Linkedin-Support-Icon-HeartinHand250.png" alt="hand__heart">
+            <img src="https://www.userflow.nl/images/Linkedin-Love-Icon-Heart250.png" alt="Heart">
+            <img src="https://www.userflow.nl/images/Linkedin-Insightful-Icon-Lamp250.png" alt="Light">
+            <img src="https://www.userflow.nl/images/Linkedin-Curious-Icon-PurpleSmiley250.png" alt="Think">
+        </div>
+        <span class="dot"></span>
+        <div class="reactions__icons">
+            <div class="icons__core">
+                <img class="clap_ reactions-icon social-detail-social-counts__count-icon social-detail-social-counts__count-icon--2 reactions-icon__consumption--small reactions-icon--stacked data-test-reactions-icon-type-PRAISE data-test-reactions-icon-theme-light" src="https://static.licdn.com/aero-v1/sc/h/b1dl5jk88euc7e9ri50xy5qo8" alt="celebrate" data-test-reactions-icon-type="PRAISE" data-test-reactions-icon-theme="light">
+                <img style="transform: translateX(-20%);" class="heart_ reactions-icon social-detail-social-counts__count-icon social-detail-social-counts__count-icon--1 reactions-icon__consumption--small reactions-icon--stacked data-test-reactions-icon-type-EMPATHY data-test-reactions-icon-theme-light" src="https://static.licdn.com/aero-v1/sc/h/cpho5fghnpme8epox8rdcds22" alt="love" data-test-reactions-icon-type="EMPATHY" data-test-reactions-icon-theme="light">
+                <img style="transform: translateX(calc(-20% - 0.4rem));" class="like_ reactions-icon social-detail-social-counts__count-icon social-detail-social-counts__count-icon--0 reactions-icon__consumption--small data-test-reactions-icon-type-LIKE data-test-reactions-icon-theme-light" src="https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt" alt="like" data-test-reactions-icon-type="LIKE" data-test-reactions-icon-theme="light">
+                <img style="transform: translateX(calc(-20% - 0.8rem));" class="bulb_ reactions-icon social-detail-social-counts__count-icon social-detail-social-counts__count-icon--1 reactions-icon__consumption--small reactions-icon--stacked data-test-reactions-icon-type-INTEREST data-test-reactions-icon-theme-light" src="https://static.licdn.com/aero-v1/sc/h/lhxmwiwoag9qepsh4nc28zus" alt="insightful" data-test-reactions-icon-type="INTEREST" data-test-reactions-icon-theme="light">
+                <img style="transform: translateX(calc(-20% - 1.2rem));" class="heart__on__hand_ reactions-icon social-detail-social-counts__count-icon social-detail-social-counts__count-icon--2 reactions-icon__consumption--small reactions-icon--stacked data-test-reactions-icon-type-APPRECIATION data-test-reactions-icon-theme-light" src="https://static.licdn.com/aero-v1/sc/h/3wqhxqtk2l554o70ur3kessf1" alt="support" data-test-reactions-icon-type="APPRECIATION" data-test-reactions-icon-theme="light">
+                <img style="transform: translateX(calc(-20% - 1.6rem));" class="laugh_ reactions-icon social-detail-social-counts__count-icon social-detail-social-counts__count-icon--1 reactions-icon__consumption--small reactions-icon--stacked data-test-reactions-icon-type-ENTERTAINMENT data-test-reactions-icon-theme-light" src="https://static.licdn.com/aero-v1/sc/h/41j9d0423ck1snej32brbuuwg" alt="funny" data-test-reactions-icon-type="ENTERTAINMENT" data-test-reactions-icon-theme="light">
+            </div>
+        </div>
+        <span class="reactions__number" style="margin-left: 0;">10</span>
+        <span>|</span>
+        <div class="like" (click)="replyToComment()">Reply</div>
+        <span class="dot"></span>
+        <span class="replies__number">2</span>
+        <div class="replies">Replies</div>
+    </div>
+   
+    <div class="sub__comments">
+        @for (subComment of comment?.replies; track $index) {
+            <app-comment [comment]="subComment" [ratio]="ratio+0.3"></app-comment>
+        }
+    </div>
+    @if (isCommentEnabled()) {
+        <div class="comments__main__input">
+            <div class="image__wrapper" [style]="'width: calc(2.5rem - '+ratio+'rem);'+'height: calc(2.5rem - '+ratio+'rem);'">
+                <img width="24" [src]="comment?.commenterAvatar" height="24" alt="El Ouali Mohammed" id="ember16" class="global-nav__me-photo evi-image ember-view">
+            </div>
+            <form class="text__input">
+                <input type="text" placeholder="Add a comment...">
+                <input type="file" class="attachment__doc" accept="image/*">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                    <path d="M8 10.5A1.5 1.5 0 119.5 12 1.5 1.5 0 018 10.5zm6.5 1.5a1.5 1.5 0 10-1.5-1.5 1.5 1.5 0 001.5 1.5zm7.5 0A10 10 0 1112 2a10 10 0 0110 10zm-2 0a8 8 0 10-8 8 8 8 0 008-8zm-8 4a6 6 0 01-4.24-1.76l-.71.76a7 7 0 009.89 0l-.71-.71A6 6 0 0112 16z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                    <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
+                </svg>
+            </form>
+        </div>
+    }
+    
+</div>

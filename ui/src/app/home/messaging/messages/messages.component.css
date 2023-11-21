@@ -1,0 +1,24 @@
+.messaging__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.messaging__header .image__wrapper{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.messaging__header svg{
+    width: 1.2rem;
+    height: auto;
+}
+
+.messages{
+    max-width: 30vw;
+    width: 30vw;
+    box-shadow: 0px 0px 0px 1px rgb(140 140 140/.2) ,0px 4px 4px rgb(0 0 0/.3);
+    border-radius: 0.5rem 0.5rem 0 0;
+    background-color: white;
+}
+
