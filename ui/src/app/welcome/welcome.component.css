@@ -1,0 +1,94 @@
+.welcome{
+    padding: 1rem 5vw;
+}
+
+.welcome nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > svg{
+    height: 2rem;
+    width: auto;
+    fill: #0A66C2 !important;
+}
+
+.tabs{
+    display: flex;
+    gap: 1rem;
+}
+
+.tabs .tab{
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1.5rem auto;
+    cursor: pointer;
+}
+
+.tabs .tab svg{
+    height: 100%;
+    width: auto;
+    fill: red;
+}
+
+.tabs > *:first-child svg{
+    height: 80%;
+    width: auto;
+}
+
+nav .navs{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navs .line{
+    width: 1px;
+    background-color: #00000099;
+    height: 100%;
+}
+
+.navs .join__now{
+    font-weight: 800;
+    font-size: medium;
+    color: #00000099;
+    border-radius: 2rem;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+}
+
+.navs .join__now:hover{
+    background-color: #f3f2f1;
+}
+
+
+
+
+.navs .sign__in{
+    border-radius: 2rem;
+    padding: 0.8rem 1rem;
+    color: #0A66C2;
+    border: 1px solid #0A66C2;
+    font-weight: 600;
+    background-color: white;
+    font-size: medium;
+}
+
+.join__form__banner{
+    display: grid;
+    grid-template-columns: 1fr 40%;
+    place-items: center;
+}
+
+.join__form__banner img{
+    width: 100%;
+    height: auto;
+}
+
+.catch__phrase{
+    font-size: 4rem;
+    color: #B24020;
+    font-weight: 100;
+    padding: 1rem 12vw;
+}
