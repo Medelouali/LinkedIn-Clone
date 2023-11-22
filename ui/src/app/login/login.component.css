@@ -1,0 +1,63 @@
+.register__login{
+    background-color: white;
+}
+
+.inputs__form{
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.motto__login{
+    font-weight: 800;
+    justify-self: start;
+}
+
+.inputs__form .stay__updated{
+    justify-self: start;
+}
+
+.continue__with__google__login p{
+    text-align: center;
+    font-weight: 800;
+    color: #00000099;
+}
+
+.continue__with__google__login{
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.inputs__form{
+    gap: 1rem;
+}
+
+.clients__buttons{
+    width: 100%;
+}
+
+.last__button{
+    text-align: center;
+    color: #00000099;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.forgot__password{
+    color: #0A66C2;
+    font-weight: 800;
+    font-size: medium;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    justify-self: start;
+    transform: translateX(-1rem);
+}
+
+.forgot__password:hover{
+    background-color: #f3f2f1;
+
+}
+
+.motto__login{
+    font-weight: 800;
+}
