@@ -29,6 +29,31 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: jobs
+          uri: lb://JOBS
+          predicates:
+            - Path=/api/v1/jobs/**
+
+        - id: linkediners
+          uri: lb://LINKEDINERS
+          predicates:
+            - Path=/api/v1/linkediners/**
+
+        - id: messages
+          uri: lb://MESSAGES
+          predicates:
+            - Path=/api/v1/messages/**
+
+        - id: network
+          uri: lb://NETWORK
+          predicates:
+            - Path=/api/v1/network/**
+
+        - id: notifications
+          uri: lb://NOTIFICATIONS
+          predicates:
+            - Path=/api/v1/notifications/**
+
         - id: posts
           uri: lb://POSTS
           predicates:
