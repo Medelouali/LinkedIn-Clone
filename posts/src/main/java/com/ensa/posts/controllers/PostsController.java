@@ -24,8 +24,8 @@ public class PostsController {
         return postsService.createPost(postDto);
     }
 
-    @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public ResponseEntity<List<Post>> searchPosts(@RequestParam() String query){
+    @RequestMapping(value = "search", method = RequestMethod.GET)
+    public ResponseEntity<List<Post>> searchPosts(@RequestParam("query") String query){
         return postsService.searchPosts(query);
     }
 }

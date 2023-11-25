@@ -20,7 +20,7 @@ public class SearchController {
     private final SearchService searchService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<Post>> getSearches(@RequestParam() String query) {
+    public ResponseEntity<List<Post>> getSearches(@RequestParam("query") String query) {
         return searchService.search(query);
     }
 }

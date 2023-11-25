@@ -17,13 +17,10 @@ import java.util.List;
 
 @FeignClient("POSTS")
 public interface FeignPostsInterface{
-
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Post>> getPosts();
-
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<List<Post>> createPost(@RequestBody PostDto postDto);
-
-    @RequestMapping(method = RequestMethod.GET, value = "/search")
-    public ResponseEntity<List<Post>> searchPosts(String query);
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    ResponseEntity<List<Post>> searchPosts(@RequestParam("query") String query);
 }
