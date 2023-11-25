@@ -26,6 +26,19 @@ spring:
     username: guest
     password: guest
 
+  cloud:
+    gateway:
+      routes:
+        - id: posts
+          uri: lb://POSTS
+          predicates:
+            - Path=/api/v1/posts/**
+
+        - id: search
+          uri: lb://SEARCH
+          predicates:
+            - Path=/api/v1/search/**
+
 eureka:
   client:
     register-with-eureka: true
