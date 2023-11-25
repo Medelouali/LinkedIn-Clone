@@ -4,10 +4,9 @@ import com.ensa.posts.dtos.PostDto;
 import com.ensa.posts.services.PostsService;
 import com.ensa.posts.models.Post;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -16,12 +15,17 @@ import java.util.List;
 public class PostsController {
     private final PostsService postsService;
     @RequestMapping(method = RequestMethod.GET)
-    public List<Post> getPosts() {
+    public ResponseEntity<List<Post>> getPosts() {
         return  postsService.getEvents();
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Post createPost(@RequestBody PostDto postDto){
+    public ResponseEntity<List<Post>> createPost(@RequestBody PostDto postDto){
         return postsService.createPost(postDto);
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public ResponseEntity<List<Post>> searchPosts(@RequestParam() String query){
+        return postsService.searchPosts(query);
     }
 }

@@ -1,5 +1,6 @@
 package com.ensa.posts.services;
 
+import com.ensa.kafka.constants.TopicsNames;
 import com.ensa.posts.dtos.PostDto;
 import com.ensa.posts.models.*;
 import com.ensa.posts.models.postTypes.NormalPost;
@@ -7,23 +8,28 @@ import com.ensa.posts.repos.PostTypeRepo;
 import com.ensa.posts.repos.PostsRepo;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class PostsService {
     private final PostsRepo postsRepo;
     private final PostTypeRepo postTypeRepo;
 
-    public List<Post> getEvents() {
-        return  postsRepo.findAll();
+    public ResponseEntity<List<Post>> getEvents() {
+        return  ResponseEntity.ok(postsRepo.findAll());
     }
 
     @Transactional
-    public Post createPost(PostDto postDto) {
+    public ResponseEntity<List<Post>> createPost(PostDto postDto) {
         Post post = new Post();
         PostType type = new NormalPost();
         type.setPostTypeEnum(postDto.getPostTypeEnum());
@@ -35,6 +41,12 @@ public class PostsService {
         post.setMedia(new ArrayList<>());
         post.setVisibility(postDto.getVisibility());
 
-        return postsRepo.save(post);
+        return ResponseEntity.ok(postsRepo.findAll());
+    }
+
+    @KafkaListener(topics = TopicsNames.SEARCHES, groupId = "searchesId")
+    public ResponseEntity<List<Post>> searchPosts(String query){
+        log.info("The search term:\t"+query);
+        return ResponseEntity.ok(postsRepo.findAll());
     }
 }

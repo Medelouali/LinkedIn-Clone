@@ -5,7 +5,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://172.26.0.2:3306/linkedin-clone
+    url: jdbc:mysql://172.26.0.4:3306/linkedin-clone
     username: root
     password: root
     driver-classname: com.mysql.cj.jdbc.Driver
@@ -25,6 +25,11 @@ spring:
     port: 5672
     username: guest
     password: guest
+  kafka:
+    producer:
+      bootstrap-servers: 172.26.0.6:29092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
 eureka:
   client:
