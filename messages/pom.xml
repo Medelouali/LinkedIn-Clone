@@ -6,12 +6,12 @@
 		<groupId>com.ensa</groupId>
 		<artifactId>linkedin-clone</artifactId>
 		<version>1.0-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<artifactId>messages</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>messages</name>
 	<description>Demo project for Spring Boot</description>
+	<packaging>jar</packaging>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.4</spring-cloud.version>

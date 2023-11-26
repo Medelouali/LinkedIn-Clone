@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient("POSTS")
+@FeignClient("POSTS/api/v1/posts")
 public interface FeignPostsInterface{
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Post>> getPosts();
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<List<Post>> createPost(@RequestBody PostDto postDto);
-    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    @RequestMapping(value = "/filter", method = RequestMethod.GET)
     ResponseEntity<List<Post>> searchPosts(@RequestParam("query") String query);
 }
