@@ -1,6 +1,5 @@
 package com.ensa.posts.services;
 
-import com.ensa.kafka.constants.TopicsNames;
 import com.ensa.posts.dtos.PostDto;
 import com.ensa.posts.models.*;
 import com.ensa.posts.models.postTypes.NormalPost;
@@ -44,7 +43,7 @@ public class PostsService {
         return ResponseEntity.ok(postsRepo.findAll());
     }
 
-    @KafkaListener(topics = TopicsNames.SEARCHES, groupId = "searchesId")
+    //@KafkaListener(topics = TopicsNames.SEARCHES, groupId = "searchesId")
     public ResponseEntity<List<Post>> searchPosts(String query){
         log.info("The search term:\t"+query);
         return ResponseEntity.ok(postsRepo.findAll());

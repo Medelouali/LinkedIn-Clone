@@ -20,18 +20,20 @@
     <spring.boot.maven.plugin.version>3.1.4</spring.boot.maven.plugin.version>
     <spring.boot.dependencies.version>3.1.4</spring.boot.dependencies.version>
     <spring.cloud-version>2020.0.3</spring.cloud-version>
+    <image>medelouali/${project.artifactId}:${project.version}</image>
   </properties>
   <modules>
+    <module>kafka-events-router</module>
     <module>notifications</module>
     <module>messages</module>
     <module>linkediners</module>
-    <module>search</module>
     <module>posts</module>
     <module>jobs</module>
     <module>network</module>
-    <module>kafka</module>
     <module>api-gateway</module>
     <module>eureka-server</module>
+
+    <module>search</module>
   </modules>
 
   <dependencyManagement>
@@ -89,18 +91,19 @@
             </execution>
           </executions>
         </plugin>
+
         <plugin>
           <groupId>com.google.cloud.tools</groupId>
           <artifactId>jib-maven-plugin</artifactId>
-          <version>3.1.4</version>
+          <version>3.4.0</version>
           <configuration>
             <from>
               <image>eclipse-temurin:17@sha256:2b47a8ea946ce1e5365a1562414ed576e378b7b670cadff3fb98ebecf2890cdc</image>
               <platforms>
-                <platform>
+                <plateform>
                   <architecture>arm64</architecture>
                   <os>linux</os>
-                </platform>
+                </plateform>
                 <platform>
                   <architecture>amd64</architecture>
                   <os>linux</os>
@@ -113,14 +116,6 @@
               </tags>
             </to>
           </configuration>
-          <executions>
-            <execution>
-              <phase>package</phase>
-              <goals>
-                <goal>build</goal>
-              </goals>
-            </execution>
-          </executions>
         </plugin>
       </plugins>
     </pluginManagement>

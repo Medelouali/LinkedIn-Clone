@@ -1,6 +1,5 @@
 package com.ensa.search.services;
 
-import com.ensa.kafka.constants.TopicsNames;
 import com.ensa.posts.models.Post;
 import com.ensa.search.feignClient.FeignPostsInterface;
 import com.ensa.search.models.Search;
