@@ -1,0 +1,73 @@
+
+
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://db:3306/linkedin-clone
+    username: root
+    password: root
+    driver-classname: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+  application:
+    name: api-gateway
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  cloud:
+    gateway:
+      routes:
+        - id: jobs
+          uri: lb://JOBS
+          predicates:
+            - Path=/api/v1/jobs/**
+
+        - id: linkediners
+          uri: lb://LINKEDINERS
+          predicates:
+            - Path=/api/v1/linkediners/**
+
+        - id: messages
+          uri: lb://MESSAGES
+          predicates:
+            - Path=/api/v1/messages/**
+
+        - id: network
+          uri: lb://NETWORK
+          predicates:
+            - Path=/api/v1/network/**
+
+        - id: notifications
+          uri: lb://NOTIFICATIONS
+          predicates:
+            - Path=/api/v1/notifications/**
+
+        - id: posts
+          uri: lb://POSTS
+          predicates:
+            - Path=/api/v1/posts/**
+
+        - id: search
+          uri: lb://SEARCH
+          predicates:
+            - Path=/api/v1/search/**
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://discovery:8761/eureka
+    enabled: true

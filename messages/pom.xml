@@ -64,7 +64,7 @@
 
 	<profiles>
 		<profile>
-			<id>build-docker-images</id>
+			<id>build-docker-image</id>
 			<build>
 				<plugins>
 					<plugin>

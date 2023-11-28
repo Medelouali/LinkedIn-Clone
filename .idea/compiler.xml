@@ -12,6 +12,7 @@
         <module name="kafka" />
         <module name="api-gateway" />
         <module name="messages" />
+        <module name="kafka-events-router" />
         <module name="linkediners" />
         <module name="posts" />
         <module name="eureka-server" />
