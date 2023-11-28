@@ -1,5 +1,6 @@
 package com.ensa.search.services;
 
+import com.ensa.posts.models.Post;
 import com.ensa.search.feignClient.FeignPostsInterface;
 import com.ensa.search.models.Search;
 import com.ensa.search.repos.SearchRepo;
@@ -19,7 +20,7 @@ public class SearchService {
         return searchRepo.findAll();
     }
 
-    public ResponseEntity<List<String>> search(String query) {
+    public ResponseEntity<List<Post>> search(String query) {
         return feignPostsInterface.searchPosts(query);
     }
 }

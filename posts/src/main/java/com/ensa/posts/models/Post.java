@@ -7,24 +7,28 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Setter
-@Getter
+@Data
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "post_type")
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
     @OneToMany
     List<Media> media;
     private PostVisibility visibility;
     private String content;
-    private Long authorId;
+    private String authorId;
     @ManyToOne
     private PostType postType;
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
+
+    @PrePersist
+    protected void onCreate() {
+        creationDate = new Date();
+    }
 }

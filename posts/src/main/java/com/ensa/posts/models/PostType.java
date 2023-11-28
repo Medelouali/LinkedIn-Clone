@@ -1,11 +1,14 @@
 package com.ensa.posts.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Setter
 @Table
+@Getter
+@Setter
 public class PostType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

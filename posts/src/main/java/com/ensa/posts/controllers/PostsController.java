@@ -16,11 +16,11 @@ public class PostsController {
     private final PostsService postsService;
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Post>> getPosts() {
-        return  postsService.getEvents();
+        return  postsService.getPosts();
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<List<Post>> createPost(@RequestBody PostDto postDto){
+    public ResponseEntity<Post> createPost(@RequestBody PostDto postDto){
         return postsService.createPost(postDto);
     }
 

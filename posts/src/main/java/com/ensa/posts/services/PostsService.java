@@ -20,27 +20,28 @@ import java.util.List;
 @AllArgsConstructor
 @Slf4j
 public class PostsService {
-    private final PostsRepo postsRepo;
     private final PostTypeRepo postTypeRepo;
+    private final PostsRepo postsRepo;
 
-    public ResponseEntity<List<Post>> getEvents() {
+    public ResponseEntity<List<Post>> getPosts() {
         return  ResponseEntity.ok(postsRepo.findAll());
     }
 
     @Transactional
-    public ResponseEntity<List<Post>> createPost(PostDto postDto) {
+    public ResponseEntity<Post> createPost(PostDto postDto) {
         Post post = new Post();
         PostType type = new NormalPost();
         type.setPostTypeEnum(postDto.getPostTypeEnum());
-        this.postTypeRepo.save(type);
+        postTypeRepo.save(type);
 
         post.setPostType(type);
-        post.setContent(post.getContent());
-        post.setAuthorId(post.getAuthorId());
+        post.setContent(postDto.getContent());
+        post.setAuthorId(postDto.getAuthorId());
         post.setMedia(new ArrayList<>());
         post.setVisibility(postDto.getVisibility());
 
-        return ResponseEntity.ok(postsRepo.findAll());
+        postsRepo.saveAndFlush(post);
+        return ResponseEntity.ok(post);
     }
 
     //@KafkaListener(topics = TopicsNames.SEARCHES, groupId = "searchesId")
