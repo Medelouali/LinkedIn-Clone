@@ -1,12 +1,11 @@
 package com.ensa.notifications.controllers;
 
+import com.ensa.notifications.dto.CreateNotificationDto;
 import com.ensa.notifications.services.NotificationService;
 import com.ensa.notifications.models.Notification;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +21,13 @@ public class NotificationsController {
         return notificationService.getNotifications();
     }
 
+    @RequestMapping(method = RequestMethod.POST)
+    public ResponseEntity<Notification> createNotification(@RequestBody() CreateNotificationDto dto) {
+        return ResponseEntity.ok(this.notificationService.createNotification(dto));
+    }
 
+    @RequestMapping(value = "{notificationId}", method = RequestMethod.DELETE)
+    public void deleteNotification(@PathVariable() String notificationId){
+        notificationService.deleteNotification(notificationId);
+    }
 }
