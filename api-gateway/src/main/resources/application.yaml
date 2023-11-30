@@ -39,10 +39,10 @@ spring:
           predicates:
             - Path=/api/v1/linkediners/**
 
-        - id: messages
-          uri: lb://MESSAGES
+        - id: conversations
+          uri: lb://CONVERSATIONS
           predicates:
-            - Path=/api/v1/messages/**
+            - Path=/api/v1/conversations/**
 
         - id: network
           uri: lb://NETWORK

@@ -1,5 +1,3 @@
-
-
 server:
   port: 8083
 
@@ -11,7 +9,7 @@ spring:
     driver-classname: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -19,12 +17,18 @@ spring:
     database: mysql
     database-platform: org.hibernate.dialect.MySQLDialect
   application:
-    name: messages
+    name: conversations
   rabbitmq:
     host: localhost
     port: 5672
     username: guest
     password: guest
+  kafka:
+    consumer:
+      bootstrap-servers: 172.26.0.6:29092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      group-id: searchesId
 
 eureka:
   client:

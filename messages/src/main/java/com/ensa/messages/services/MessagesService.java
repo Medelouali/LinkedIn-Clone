@@ -8,6 +8,7 @@ import com.ensa.messages.repos.ConversationRepo;
 import com.ensa.messages.repos.MessagesRepo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.Optional;
 @Service
 @Data
 @AllArgsConstructor
+@Slf4j
 public class MessagesService {
     private final MessagesRepo messagesRepo;
     private final ConversationRepo conversationRepo;
@@ -24,33 +26,44 @@ public class MessagesService {
     }
 
     public List<Message> sendMessage(SendMessageDto msg){
-        Optional<Conversation> conversation = conversationRepo.findById(msg.getConversationId());
-        // Check if there is already a conversation in place
-        if(conversation.isPresent()){
-            Message message=Message.builder()
+        Optional<Conversation> conversationOptional = conversationRepo.findById(msg.getConversationId());
+
+        if (conversationOptional.isPresent()) {
+            log.info("Conversation already exists");
+            Conversation conversation = conversationOptional.get();
+
+            Message message = Message.builder()
                     .message(msg.getMessage())
                     .receiverId(msg.getReceiverId())
                     .senderId(msg.getSenderId())
-                    .conversationId(msg.getConversationId())
+                    .conversationId(conversation.getId())
                     .build();
-            conversation.get().addMessage(message);
-            conversationRepo.saveAndFlush(conversation.get());
-            return conversation.get().getMessages();
+
+            conversation.addMessage(message);
+
+            // Save the conversation along with the new message
+            conversationRepo.saveAndFlush(conversation);
+
+            return conversation.getMessages();
         }
-        Conversation conversation1=Conversation.builder()
-                .ownerId1(msg.getReceiverId())
+
+        log.info("New conversation");
+        Conversation newConversation = Conversation.builder()
                 .ownerId2(msg.getReceiverId())
+                .ownerId1(msg.getSenderId())
                 .build();
-        conversationRepo.saveAndFlush(conversation1);
-        Message message=Message.builder()
+
+        Message message = Message.builder()
                 .message(msg.getMessage())
                 .receiverId(msg.getReceiverId())
                 .senderId(msg.getSenderId())
-                .conversationId(conversation1.getId())
+                .conversationId(newConversation.getId())
                 .build();
-        messagesRepo.saveAndFlush(message);
-        conversation1.addMessage(message);
-        conversationRepo.saveAndFlush(conversation1);
-        return conversation1.getMessages();
+        newConversation.addMessage(message);
+
+        // Save the new conversation along with the new message
+        conversationRepo.saveAndFlush(newConversation);
+
+        return newConversation.getMessages();
     }
 }

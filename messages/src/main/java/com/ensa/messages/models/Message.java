@@ -2,9 +2,7 @@ package com.ensa.messages.models;
 
 import com.ensa.posts.models.Media;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,6 +13,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -28,4 +27,8 @@ public class Message {
     private List<String> docsIds=new ArrayList<>();
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
+    @PrePersist
+    protected void onCreate() {
+        creationDate = new Date();
+    }
 }

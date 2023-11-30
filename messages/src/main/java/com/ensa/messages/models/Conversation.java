@@ -22,10 +22,14 @@ public class Conversation {
     private String ownerId2;
     @Builder.Default
     private ConversationType conversationType=ConversationType.FOCUSED;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Message> messages;
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
+    @PrePersist
+    protected void onCreate() {
+        creationDate = new Date();
+    }
 
     public void addMessage(Message message) {
         if (messages == null) {

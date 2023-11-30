@@ -1,8 +1,6 @@
 package com.ensa.messages.dtos;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Data
 public class SendMessageDto {
@@ -10,4 +8,14 @@ public class SendMessageDto {
     private String receiverId;
     private String conversationId;
     private String message;
+
+    @Override
+    public String toString() {
+        return "SendMessageDto{" +
+                "senderId='" + senderId + '\'' +
+                ", receiverId='" + receiverId + '\'' +
+                ", conversationId='" + conversationId + '\'' +
+                ", message='" + message + '\'' +
+                '}';
+    }
 }
