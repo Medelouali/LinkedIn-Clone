@@ -4,7 +4,7 @@
     padding: 0.9rem;
     border-radius: 0.6rem;
     background-color: white;
-
+    position: relative;
 }
 .post__header{
     display: grid;
@@ -349,4 +349,16 @@
 .text__input svg:hover{
     background-color: rgb(224, 238, 238);
     border-radius: 50%;
+}
+
+.images__canvas{
+    width: calc(100% + 1.8rem);
+    transform: translateX(-0.9rem);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.images__canvas img{
+    width: 100%;
+    height: auto;
 }

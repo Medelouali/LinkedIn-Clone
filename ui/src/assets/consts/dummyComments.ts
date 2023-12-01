@@ -7,7 +7,7 @@ export const dummyComments: Array<Comment> = [
         commenterJob: "Software Engineer",
         timeStamp: "16h ago",
         reactions: 25,
-        commenterAvatar: "https://media.licdn.com/dms/image/D5635AQF-8B7Ao8Qv5A/profile-framedphoto-shrink_100_100/0/1696605639797?e=1701003600&v=beta&t=jLDp9Y21CQRAVykc55TbLry8RktcL2-LcEQ5cwtwzh0",
+        commenterAvatar: "https://media.licdn.com/dms/image/D5635AQF-8B7Ao8Qv5A/profile-framedphoto-shrink_100_100/0/1696605639797?e=1702026000&v=beta&t=YAc5zDtWcHcQWVLOFZ6elIbTlyl8SrxAy04_CqqQPfY",
         replies: [
           {
             commentText: "Thanks, John!",
@@ -15,7 +15,7 @@ export const dummyComments: Array<Comment> = [
             commenterJob: "Graphic Designer",
             timeStamp: "15h ago",
             reactions: 12,
-            commenterAvatar: "https://media.licdn.com/dms/image/D5635AQF-8B7Ao8Qv5A/profile-framedphoto-shrink_100_100/0/1696605639797?e=1701003600&v=beta&t=jLDp9Y21CQRAVykc55TbLry8RktcL2-LcEQ5cwtwzh0",
+            commenterAvatar: "https://media.licdn.com/dms/image/D5635AQF-8B7Ao8Qv5A/profile-framedphoto-shrink_100_100/0/1696605639797?e=1702026000&v=beta&t=YAc5zDtWcHcQWVLOFZ6elIbTlyl8SrxAy04_CqqQPfY",
           },
           {
             commentText: "I agree, learned a lot too!",
@@ -23,7 +23,7 @@ export const dummyComments: Array<Comment> = [
             commenterJob: "Marketing Specialist",
             timeStamp: "14h ago",
             reactions: 8,
-            commenterAvatar: "https://media.licdn.com/dms/image/D5635AQF-8B7Ao8Qv5A/profile-framedphoto-shrink_100_100/0/1696605639797?e=1701003600&v=beta&t=jLDp9Y21CQRAVykc55TbLry8RktcL2-LcEQ5cwtwzh0",
+            commenterAvatar: "https://media.licdn.com/dms/image/D5635AQF-8B7Ao8Qv5A/profile-framedphoto-shrink_100_100/0/1696605639797?e=1702026000&v=beta&t=YAc5zDtWcHcQWVLOFZ6elIbTlyl8SrxAy04_CqqQPfY",
           },
         ],
       },
@@ -33,7 +33,7 @@ export const dummyComments: Array<Comment> = [
         commenterJob: "Data Scientist",
         timeStamp: "14h ago",
         reactions: 18,
-        commenterAvatar: "https://media.licdn.com/dms/image/D5635AQF-8B7Ao8Qv5A/profile-framedphoto-shrink_100_100/0/1696605639797?e=1701003600&v=beta&t=jLDp9Y21CQRAVykc55TbLry8RktcL2-LcEQ5cwtwzh0",
+        commenterAvatar: "https://media.licdn.com/dms/image/D5635AQF-8B7Ao8Qv5A/profile-framedphoto-shrink_100_100/0/1696605639797?e=1702026000&v=beta&t=YAc5zDtWcHcQWVLOFZ6elIbTlyl8SrxAy04_CqqQPfY",
         replies: [
           {
             commentText: "Glad you found it interesting!",
@@ -41,7 +41,7 @@ export const dummyComments: Array<Comment> = [
             commenterJob: "Project Manager",
             timeStamp: "13h ago",
             reactions: 10,
-            commenterAvatar: "https://media.licdn.com/dms/image/D5635AQF-8B7Ao8Qv5A/profile-framedphoto-shrink_100_100/0/1696605639797?e=1701003600&v=beta&t=jLDp9Y21CQRAVykc55TbLry8RktcL2-LcEQ5cwtwzh0",
+            commenterAvatar: "https://media.licdn.com/dms/image/D5635AQF-8B7Ao8Qv5A/profile-framedphoto-shrink_100_100/0/1696605639797?e=1702026000&v=beta&t=YAc5zDtWcHcQWVLOFZ6elIbTlyl8SrxAy04_CqqQPfY",
           },
           {
             commentText: "I think so too!",
@@ -49,7 +49,7 @@ export const dummyComments: Array<Comment> = [
             commenterJob: "UX Designer",
             timeStamp: "12h ago",
             reactions: 15,
-            commenterAvatar: "https://media.licdn.com/dms/image/D5635AQF-8B7Ao8Qv5A/profile-framedphoto-shrink_100_100/0/1696605639797?e=1701003600&v=beta&t=jLDp9Y21CQRAVykc55TbLry8RktcL2-LcEQ5cwtwzh0",
+            commenterAvatar: "https://media.licdn.com/dms/image/D5635AQF-8B7Ao8Qv5A/profile-framedphoto-shrink_100_100/0/1696605639797?e=1702026000&v=beta&t=YAc5zDtWcHcQWVLOFZ6elIbTlyl8SrxAy04_CqqQPfY",
           },
         ],
       },

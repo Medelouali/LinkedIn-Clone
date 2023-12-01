@@ -34,26 +34,7 @@
     
 }
 
-.search__bar{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    height: 2.0rem;
-    width: 18rem;
-    background-color: #EDF3F8;
-    padding: 0.5rem;
-    border-radius: 0.2rem;
-}
 
-.search__bar input{
-    height: 100%;
-    width: 100%;
-    padding: 0rem 1rem;
-    border-radius: 0.3rem;
-    outline: none;
-    border: none;
-    font-size: medium;
-    background-color: #EDF3F8;
-}
 
 .search__bar svg{
     color: #00000099;
@@ -373,3 +354,134 @@ a span{
     transition: inset 0.5s ease;
 }
 
+.recents__see__all{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recents__see__all span{
+    font-size: medium;
+    font-weight: 600;
+}
+
+.recents__see__all span.see__all{
+    color: rgb(128, 121, 122);
+    padding: 0.3rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+}
+
+.recents__see__all span.see__all:hover{
+    background-color: #f3f2f1;
+}
+
+.recent__people{
+    display: grid;
+    gap: 0.1rem;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.recent__people .recent__person{
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    padding: 0.2rem;
+    border-radius: 0.1rem;
+}
+
+.recent__person:hover{
+    background-color: #f3f2f1;
+}
+
+.recent__person .image__wrapper{
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.recent__person .name{
+    font-weight: 800;
+    font-size: small;
+    text-align: center;
+}
+
+.recorded__patterns{
+    display: grid;
+    place-items: start;
+    width: calc(100% + 1.8rem);
+    transform: translateX(-0.9rem);
+}
+
+.recents__see__all__{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.recorded__pattern{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.7rem 0.3rem;
+    cursor: pointer;
+}
+
+.recorded__pattern:hover{
+    background-color: #f3f2f1;
+}
+
+.recorded__pattern svg{
+    fill: #00000099;
+    width: 1rem;
+    height: auto;
+}
+
+.recorded__pattern p{
+    font-weight: 800;
+    font-size: small;
+}
+
+.search__suggestions{
+    display: grid;
+    gap: 1rem;
+}
+
+.search__bar{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: 2.0rem;
+    width: 18rem;
+    background-color: #EDF3F8;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    position: relative;
+}
+
+.search__bar input{
+    height: 100%;
+    width: 100%;
+    padding: 0rem 1rem;
+    border-radius: 0.3rem;
+    outline: none;
+    border: none;
+    font-size: medium;
+    background-color: #EDF3F8;
+}
+
+.search__suggestions{
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 0.9rem;
+    border-radius: 0.3rem;
+    z-index: 9999;
+    inset: 100% auto auto 0;
+    width: calc(100% + 5rem);
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+}
+
+.search__bar input:focus-within + .search__suggestions{
+    display: block;
+}
