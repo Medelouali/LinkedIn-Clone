@@ -37,7 +37,6 @@ public class PostsService {
         post.setPostType(type);
         post.setContent(postDto.getContent());
         post.setAuthorId(postDto.getAuthorId());
-        post.setMedia(new ArrayList<>());
         post.setVisibility(postDto.getVisibility());
 
         postsRepo.saveAndFlush(post);
