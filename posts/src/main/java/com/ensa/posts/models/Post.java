@@ -1,5 +1,6 @@
 package com.ensa.posts.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,7 +9,8 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "post_type")
 @Builder
@@ -22,16 +24,19 @@ public class Post {
     private String content;
     private String authorId;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     List<Media> media=new ArrayList<>();
 
     @ManyToOne
+    @JsonBackReference
     private PostType postType;
 
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
 
-    @OneToOne
+    @JsonBackReference
+    @OneToOne(cascade = CascadeType.ALL)
     private Reactions reactions;
 
     @Temporal(TemporalType.TIMESTAMP)

@@ -1,15 +1,16 @@
 package com.ensa.posts.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,13 +21,14 @@ public class Comment {
     private String commenterId;
     private String text;
 
-    @OneToMany
+    @JsonBackReference
+    @OneToMany()
     private List<Comment> comments;
 
-    @ManyToOne
-    @JoinColumn()
+    @ManyToOne(cascade = CascadeType.ALL)
     private Post post;
 
-    @OneToOne
+    @JsonIgnore
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "comment")
     private Reactions reactions;
 }

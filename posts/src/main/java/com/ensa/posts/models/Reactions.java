@@ -1,6 +1,9 @@
 package com.ensa.posts.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,12 +21,11 @@ public class Reactions {
     private Long lights;
     private Long handHearts;
 
-    @OneToOne
-    @JoinColumn()
+    @OneToOne(cascade = CascadeType.ALL)
     private Comment comment;
 
-    @OneToOne
-    @JoinColumn()
+    @JsonIgnore
+    @OneToOne(mappedBy = "reactions", cascade = CascadeType.ALL)
     private Post post;
 
     public Reactions() {

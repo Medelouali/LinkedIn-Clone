@@ -5,6 +5,7 @@ import com.ensa.posts.models.*;
 import com.ensa.posts.models.postTypes.NormalPost;
 import com.ensa.posts.repos.PostTypeRepo;
 import com.ensa.posts.repos.PostsRepo;
+import com.ensa.posts.repos.ReactionsRepo;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +23,7 @@ import java.util.List;
 public class PostsService {
     private final PostTypeRepo postTypeRepo;
     private final PostsRepo postsRepo;
+    private final ReactionsRepo reactionsRepo;
 
     public ResponseEntity<List<Post>> getPosts() {
         return  ResponseEntity.ok(postsRepo.findAll());
@@ -32,14 +34,19 @@ public class PostsService {
         Post post = new Post();
         PostType type = new NormalPost();
         type.setPostTypeEnum(postDto.getPostTypeEnum());
-        postTypeRepo.save(type);
+        postTypeRepo.saveAndFlush(type);
 
         post.setPostType(type);
         post.setContent(postDto.getContent());
         post.setAuthorId(postDto.getAuthorId());
         post.setVisibility(postDto.getVisibility());
 
+        Reactions reactions = new Reactions();
+        reactionsRepo.saveAndFlush(reactions);
+
+        post.setReactions(reactions);
         postsRepo.saveAndFlush(post);
+
         return ResponseEntity.ok(post);
     }
 
