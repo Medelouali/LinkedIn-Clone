@@ -12,6 +12,7 @@ import { AddsComponent } from './adds/adds.component';
 import { PostComponent } from './posts/post/post.component';
 import { CommentComponent } from './posts/comment/comment.component';
 import { AddsModule } from './adds/adds.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { AddsModule } from './adds/adds.module';
   imports: [
     CommonModule,
     FeedRoutingModule,
-    AddsModule
+    AddsModule,
+    ReactiveFormsModule
   ]
 })
 export class FeedModule { }

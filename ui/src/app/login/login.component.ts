@@ -1,5 +1,8 @@
 import { Component, Input, signal } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/services/auth/login/login.service';
+import { emailOrPhoneValidator } from 'src/utils/validators/emailOrPhoneValidator';
 
 @Component({
   selector: 'app-login',
@@ -10,30 +13,35 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   @Input() isFullForm=true;
   isPasswordHidden= signal(true);
-  signUpData={
-    email : { value: "", isTouched: false },
-    password : { value: "", isTouched: false },
-  }
-
-  constructor(private router: Router) {}
+  loginFormGroup=new FormGroup({
+    emailOrPhone: new FormControl(
+      "", 
+      [ 
+        Validators.required, 
+        emailOrPhoneValidator(/^(\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)|(((00)?(\+)?\d{1,3})[-\s]+(\d{1,3})[-\s]+(\d{4,10}))$/i)
+      ]
+    ),
+    password: new FormControl("", [Validators.required, Validators.minLength(6)])
+  });
+  constructor(private router: Router, private readonly loginService: LoginService) {}
 
   navigateToHome() {
     //todo: implement the login before navigation
-    this.router.navigate(['/home', 'feed']);
+    console.log(this.loginFormGroup.value?.password);
+    //this.router.navigate(['/home', 'feed']);
+    console.log(this.loginFormGroup.value)
+    this.loginService.login({ emailOrPhone: this.loginFormGroup.value?.emailOrPhone ?? "", password: this.loginFormGroup.value?.password ?? "" })
   }
   
   toggleIsPasswordHidden(){
     this.isPasswordHidden.update(v=>!v);
   }
 
-  onSubmit(data: {
-    email: string,
-    password: string
-  }) {
-    this.signUpData={
-      email : { value: data.email, isTouched: false },
-      password : { value: data.password, isTouched: false },
-    };
-    console.log(this.signUpData);
+  get emailOrPhone(){
+    return this.loginFormGroup.get("emailOrPhone");
+  }
+
+  get password(){
+    return this.loginFormGroup.get("password");
   }
 }
