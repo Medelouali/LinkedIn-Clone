@@ -39,5 +39,5 @@ To run the LinkedIn Clone Microservices project, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/linkedin-clone-microservices.git
+   git clone git@github.com:Medelouali/LinkedIn-Clone.git
 
