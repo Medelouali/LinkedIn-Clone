@@ -1,7 +1,8 @@
 
 
+
 server:
-  port: 8086
+  port: 8090
 
 spring:
   datasource:
@@ -19,7 +20,7 @@ spring:
     database: mysql
     database-platform: org.hibernate.dialect.MySQLDialect
   application:
-    name: posts
+    name: identity-provider
   rabbitmq:
     host: localhost
     port: 5672

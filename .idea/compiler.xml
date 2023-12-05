@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="search" />
+        <module name="identity-provider" />
         <module name="jobs" />
         <module name="kafka" />
         <module name="api-gateway" />

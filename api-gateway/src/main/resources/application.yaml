@@ -3,9 +3,12 @@
 server:
   port: 8080
 
+
 spring:
+  main:
+    allow-circular-references: true
   datasource:
-    url: jdbc:mysql://172.26.0.4:3306/linkedin-clone
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/linkedin-clone
     username: root
     password: root
     driver-classname: com.mysql.cj.jdbc.Driver
@@ -29,40 +32,59 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: identity-provider
+          uri: lb://IDENTITY-PROVIDER
+          predicates:
+            - Path=/api/v1/auth/**
+
         - id: jobs
           uri: lb://JOBS
           predicates:
             - Path=/api/v1/jobs/**
+          filters:
+            - AuthenticationFilter
 
         - id: linkediners
           uri: lb://LINKEDINERS
           predicates:
             - Path=/api/v1/linkediners/**
+          filters:
+            - AuthenticationFilter
 
         - id: conversations
           uri: lb://CONVERSATIONS
           predicates:
             - Path=/api/v1/conversations/**
+          filters:
+            - AuthenticationFilter
 
         - id: network
           uri: lb://NETWORK
           predicates:
             - Path=/api/v1/network/**
+          filters:
+            - AuthenticationFilter
 
         - id: notifications
           uri: lb://NOTIFICATIONS
           predicates:
             - Path=/api/v1/notifications/**
+          filters:
+            - AuthenticationFilter
 
         - id: posts
           uri: lb://POSTS
           predicates:
             - Path=/api/v1/posts/**
+          filters:
+            - AuthenticationFilter
 
         - id: search
           uri: lb://SEARCH
           predicates:
             - Path=/api/v1/search/**
+          filters:
+            - AuthenticationFilter
 
 eureka:
   client:

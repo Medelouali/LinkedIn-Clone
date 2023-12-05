@@ -8,6 +8,8 @@
     <file url="file://$PROJECT_DIR$/eureka-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/feign-client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/feign-client/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/identity-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/identity-provider/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jobs/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jobs/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kafka-events-router/src/main/java" charset="UTF-8" />
