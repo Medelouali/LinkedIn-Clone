@@ -16,20 +16,23 @@
           </svg>
     </div>
     <p class="motto">Make the most of your professional life</p>
-    <form action="" class="inputs__form" #formData="ngForm" (ngSubmit)="onSubmit(formData.value)">
-        <label class="email" for="signup__mail">Email</label>
-        <input type="email" name="email" id="signup__mail" ngModel>
-        @if (1 && signUpData.email.isTouched) {
+    <form [formGroup]="loginFormGroup" (submit)="navigateToHome()" class="inputs__form">
+        <label for="emailOrPhone">Email</label>
+        <input formControlName="emailOrPhone" type="email" name="emailOrPhone" id="emailOrPhone" placeholder="Email">
+        @if (emailOrPhone?.dirty && emailOrPhone?.invalid) {
             <span class="error">Please enter a valid email address.</span>
         }
 
         <label class="password" for="signup__pass">Password (6+ characters)</label>
         <div class="input__wrapper">
-            <input [type]="isPasswordHidden() ? 'password': 'text'" name="password" id="signup__pass" (focus)="signUpData.password.isTouched=true" ngModel>
+            <label for="password"></label>
+            <input formControlName="password" [type]="isPasswordHidden() ? 'password': 'text'" name="password" id="password"  placeholder="Password">
             @if (isPasswordHidden()) {<span (click)="toggleIsPasswordHidden()">Show</span>} 
             @else {<span (click)="toggleIsPasswordHidden()">Hide</span>}
         </div>
-        @if (signUpData.password.value.length<=6 && signUpData.password.isTouched) {<span class="error">Password must be 6 characters or more.</span>} 
+        @if (password?.invalid && password?.dirty) {
+            <span class="error">Password must be at least 6 characters.</span>
+        }
 
         <p class="policy">
             By clicking Agree & Join, you agree to the LinkedIn <strong>User Agreement, Privacy Policy</strong>, and <strong>Cookie Policy</strong>.

@@ -6,4 +6,11 @@ import { Injectable } from '@angular/core';
 export class RegisterService {
 
   constructor() { }
+
+  
+  register(loginForm: { emailOrPhone: string, password: string }){
+    console.log(loginForm);
+    // Call the api and stuff
+    return true;
+  }
 }

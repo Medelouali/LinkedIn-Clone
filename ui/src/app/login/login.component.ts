@@ -26,11 +26,11 @@ export class LoginComponent {
   constructor(private router: Router, private readonly loginService: LoginService) {}
 
   navigateToHome() {
-    //todo: implement the login before navigation
-    console.log(this.loginFormGroup.value?.password);
-    //this.router.navigate(['/home', 'feed']);
-    console.log(this.loginFormGroup.value)
-    this.loginService.login({ emailOrPhone: this.loginFormGroup.value?.emailOrPhone ?? "", password: this.loginFormGroup.value?.password ?? "" })
+    if(this.loginFormGroup.status=="INVALID")return;
+    if(this.loginService.login({ 
+      emailOrPhone: this.loginFormGroup.value?.emailOrPhone ?? "", 
+      password: this.loginFormGroup.value?.password ?? "" }))
+        this.router.navigate(['/home', 'feed']);
   }
   
   toggleIsPasswordHidden(){

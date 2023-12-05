@@ -10,5 +10,6 @@ export class LoginService {
   login(loginForm: { emailOrPhone: string, password: string }){
     console.log(loginForm);
     // Call the api and stuff
+    return true;
   }
 }
