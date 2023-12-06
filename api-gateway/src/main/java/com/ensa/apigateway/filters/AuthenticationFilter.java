@@ -2,20 +2,24 @@ package com.ensa.apigateway.filters;
 
 
 import com.ensa.apigateway.feignClient.FeignIAMInterface;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 @Component
+@Slf4j
 public class AuthenticationFilter extends AbstractGatewayFilterFactory<AuthenticationFilter.Config> {
 
     @Autowired
     private RouteValidator validator;
 
     @Autowired
+    @Lazy
     private FeignIAMInterface feignIAMInterface;
 
     public AuthenticationFilter() {
@@ -36,9 +40,11 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
                     authHeader = authHeader.substring(7);
                 }
                 try {
+                    log.info(authHeader);
                     feignIAMInterface.validateToken(authHeader);
                 } catch (Exception e) {
-                    System.out.println("invalid access...!");
+                    System.out.println("Invalid access...!");
+                    System.out.println(e.getMessage());
                     throw new RuntimeException("un authorized access to application");
                 }
             }
