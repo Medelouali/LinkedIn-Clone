@@ -7,18 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="search" />
         <module name="identity-provider" />
         <module name="jobs" />
+        <module name="kafka-events-router" />
+        <module name="posts" />
+        <module name="eureka-server" />
+        <module name="network" />
+        <module name="config-server" />
+        <module name="search" />
         <module name="kafka" />
         <module name="api-gateway" />
         <module name="messages" />
-        <module name="kafka-events-router" />
         <module name="linkediners" />
-        <module name="posts" />
-        <module name="eureka-server" />
         <module name="notifications" />
-        <module name="network" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

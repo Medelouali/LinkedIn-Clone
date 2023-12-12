@@ -5,10 +5,10 @@ server:
 
 spring:
   datasource:
-    url: ${db.url}
-    username: ${db.username}
-    password: ${db.password}
-    driver-classname: ${db.driver}
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/linkedin-clone
+    username: root
+    password: root
+    driver-classname: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
@@ -19,7 +19,7 @@ spring:
     database: mysql
     database-platform: org.hibernate.dialect.MySQLDialect
   application:
-    name: posts
+    name: config-server
   rabbitmq:
     host: localhost
     port: 5672
@@ -31,13 +31,16 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       group-id: searchesId
-  config:
-    import: configserver:http://localhost:8086/
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Medelouali/config-server-properties
 
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://${DB_HOST:localhost}:8761/eureka/
+      defaultZone: http://localhost:8761/eureka
     enabled: true
