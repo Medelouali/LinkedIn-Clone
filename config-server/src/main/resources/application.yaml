@@ -4,20 +4,6 @@ server:
   port: 8086
 
 spring:
-  datasource:
-    url: jdbc:mysql://${DB_HOST:localhost}:3306/linkedin-clone
-    username: root
-    password: root
-    driver-classname: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQLDialect
   application:
     name: config-server
   rabbitmq:

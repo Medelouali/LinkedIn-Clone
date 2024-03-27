@@ -4,8 +4,15 @@
 server:
   port: 8090
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          client-id: user-client
+          issuer-uri: http://stepup-keycloak:8080/realms/stepup
+          jwk-set-uri: http://stepup-keycloak:8080/realms/stepup/protocol/openid-connect/certs
   datasource:
-    url: ${db.url}
+    url: jdbc:mysql://${db.host:localhost}:${db.port:3306}/${db.name:linkedin-clone}
     username: ${db.username}
     password: ${db.password}
     driver-classname: ${db.driver}
@@ -41,3 +48,4 @@ eureka:
     service-url:
       defaultZone: http://${DB_HOST:localhost}:8761/eureka/
     enabled: true
+

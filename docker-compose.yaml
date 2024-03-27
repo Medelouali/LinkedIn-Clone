@@ -64,11 +64,21 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
   keycloak:
-    image: quay.io/keycloak/keycloak:23.0.1
+    image: quay.io/keycloak/keycloak:21.0
+    container_name: stepup-keycloak
+    hostname: stepup-keycloak
     ports:
-      - "9090:8080"
+      - "9080:8080"
+    networks:
+      - keycloak-net
+    volumes:
+      - ./keycloak/config:/opt/keycloak/data/import
     environment:
-      - KEYCLOAK_ADMIN=admin
-      - KEYCLOAK_ADMIN_PASSWORD=admin
-    command: [ "start-dev" ]
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HOSTNAME: localhost
+    entrypoint: [ "/opt/keycloak/bin/kc.sh", "start-dev", "--import-realm" ]
+networks:
+  keycloak-net: { }

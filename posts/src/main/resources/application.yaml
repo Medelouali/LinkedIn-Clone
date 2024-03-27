@@ -5,7 +5,7 @@ server:
 
 spring:
   datasource:
-    url: ${db.url}
+    url: jdbc:mysql://${db.host:localhost}:${db.port:3306}/${db.name:linkedin-clone}
     username: ${db.username}
     password: ${db.password}
     driver-classname: ${db.driver}
